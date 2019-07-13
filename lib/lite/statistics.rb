@@ -1,8 +1,9 @@
-require "lite/statistics/version"
+# frozen_string_literal: true
 
-module Lite
-  module Statistics
-    class Error < StandardError; end
-    # Your code goes here...
-  end
+%w[version configuration base mean].each do |filename|
+  require "lite/statistics/#{filename}"
 end
+
+require 'lite/statistics/monkey_patches' if Lite::Statistics.configuration.monkey_patches
+
+require 'generators/lite/statistics/install_generator'

@@ -1,8 +1,9 @@
 # Lite::Statistics
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lite/statistics`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/lite-statistics.svg)](http://badge.fury.io/rb/lite-statistics)
+[![Build Status](https://travis-ci.org/drexed/lite-statistics.svg?branch=master)](https://travis-ci.org/drexed/lite-statistics)
 
-TODO: Delete this and the text above, and describe your gem
+Lite::Statistics is a library for converting statistics to different unit sizes or types.
 
 ## Installation
 
@@ -20,9 +21,53 @@ Or install it yourself as:
 
     $ gem install lite-statistics
 
-## Usage
+## Table of Contents
 
-TODO: Write usage instructions here
+* [Configurations](#configurations)
+* [Statistics](#statistics)
+* [Monkey-patches](#monkey-patches)
+
+## Configurations
+
+`rails g lite:statistics:install` will generate the following file:
+`../config/initalizers/lite-statistics.rb`
+
+```ruby
+Lite::Statistics.configure do |config|
+  config.monkey_patches = true
+end
+```
+
+## Statistics
+
+* [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/MEAN.md)
+
+## Monkey-patches
+
+Including monkey patches will give you `Numeric` access to statistics.
+
+```ruby
+[1, 2, 3, 1].mode #=> 1
+```
+
+## Temperature
+
+Option | Type | Default
+--- | --- | ---
+from, to | symbol | `:celsius`, `:fahrenheit`, `:kelvin`
+
+```ruby
+temperature = Lite::Statistics::Temperature.new(2)
+temperature = temperature.convert(from: :fahrenheit, to: :celsius)      #=> -16.666666666666668
+
+# - or -
+
+Lite::Statistics::Temperature.convert(2, from: :celsius, to: :kelvin) #=> 275.15
+
+# - or -
+
+2.convert_temperature(from: :kelvin, to: :fahrenheit)                   #=> -456.07
+```
 
 ## Development
 
