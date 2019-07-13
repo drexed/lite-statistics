@@ -24,8 +24,8 @@ Or install it yourself as:
 ## Table of Contents
 
 * [Configurations](#configurations)
-* [Statistics](#statistics)
-* [Monkey-patches](#monkey-patches)
+* [Central tendency](#central-tendency)
+* [Monkey patches](#monkey-patches)
 
 ## Configurations
 
@@ -38,11 +38,13 @@ Lite::Statistics.configure do |config|
 end
 ```
 
-## Statistics
+## Central tendency
 
 * [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/MEAN.md)
+* [Median](https://github.com/drexed/lite-ruby/blob/master/docs/MEDIAN.md)
+* [Mode](https://github.com/drexed/lite-ruby/blob/master/docs/MODE.md)
 
-## Monkey-patches
+## Monkey patches
 
 Including monkey patches will give you `Numeric` access to statistics.
 

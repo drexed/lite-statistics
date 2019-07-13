@@ -1,5 +1,7 @@
 # Mean
 
+The average of all numbers.
+
 ```ruby
 collection = [1, 2, 3]
 
@@ -13,4 +15,5 @@ Lite::Statistics::Mean.calculate(collection) #=> 2.0
 # - or -
 
 collection.mean                              #=> 2.0
+collection.average                           #=> 2.0
 ```

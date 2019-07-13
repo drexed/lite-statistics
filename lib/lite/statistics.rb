@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-%w[version configuration base mean].each do |filename|
+%w[version configuration base mean median mode].each do |filename|
   require "lite/statistics/#{filename}"
 end
 
