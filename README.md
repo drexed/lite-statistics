@@ -25,6 +25,7 @@ Or install it yourself as:
 
 * [Configurations](#configurations)
 * [Central tendency](#central-tendency)
+* [Dispersion](#dispersion)
 * [Monkey patches](#monkey-patches)
 
 ## Configurations
@@ -44,9 +45,15 @@ end
 * [Median](https://github.com/drexed/lite-ruby/blob/master/docs/MEDIAN.md)
 * [Mode](https://github.com/drexed/lite-ruby/blob/master/docs/MODE.md)
 
+## Dispersion
+
+* [Range](https://github.com/drexed/lite-ruby/blob/master/docs/RANGE.md)
+* [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/PERCENTILE_FROM_VALUE.md)
+* [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/VALUE_FROM_PERCENTILE.md)
+
 ## Monkey patches
 
-Including monkey patches will give you `Numeric` access to statistics.
+Including monkey patches will give you `Enumerable` access to statistics.
 
 ```ruby
 [1, 2, 3, 1].mode #=> 1

@@ -3,17 +3,17 @@
 The average of all numbers.
 
 ```ruby
-collection = [1, 2, 3]
+collection = [1, 1, 2, 3, 10]
 
 klass = Lite::Statistics::Mean.new(collection)
-klass = klass.calculate                      #=> 2.0
+klass = klass.calculate                      #=> 3.4
 
 # - or -
 
-Lite::Statistics::Mean.calculate(collection) #=> 2.0
+Lite::Statistics::Mean.calculate(collection) #=> 3.4
 
 # - or -
 
-collection.mean                              #=> 2.0
-collection.average                           #=> 2.0
+collection.mean                              #=> 3.4
+collection.average                           #=> 3.4
 ```

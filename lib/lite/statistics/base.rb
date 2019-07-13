@@ -12,9 +12,9 @@ module Lite
 
       class << self
 
-        def calculate(collection)
+        def calculate(collection, *args)
           klass = new(collection)
-          klass.calculate
+          klass.calculate(*args)
         end
 
       end

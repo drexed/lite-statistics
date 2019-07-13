@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Lite::Statistics::Mode do
-  let(:collection) { [1, 2, 3, 1] }
+  let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
   let(:n1) { 1 }
 
