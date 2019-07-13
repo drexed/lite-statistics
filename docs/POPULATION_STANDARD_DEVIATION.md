@@ -12,5 +12,5 @@ Lite::Statistics::PopulationStandardDeviation.calculate(collection) #=> 3.382306
 
 # - or -
 
-collection.relative_standard_deviation                              #=> 3.3823069050575527
+collection.population_standard_deviation                            #=> 3.3823069050575527
 ```

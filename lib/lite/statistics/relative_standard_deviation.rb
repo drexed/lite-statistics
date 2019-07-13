@@ -7,7 +7,7 @@ module Lite
       def calculate
         return if collection.empty?
 
-        (population_standard_deviation / mean) * 100.0
+        population_standard_deviation / mean
       end
 
       private
