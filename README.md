@@ -26,6 +26,7 @@ Or install it yourself as:
 * [Configurations](#configurations)
 * [Central tendency](#central-tendency)
 * [Dispersion](#dispersion)
+* [Spread](#spread)
 * [Monkey patches](#monkey-patches)
 
 ## Configurations
@@ -50,6 +51,15 @@ end
 * [Range](https://github.com/drexed/lite-ruby/blob/master/docs/RANGE.md)
 * [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/PERCENTILE_FROM_VALUE.md)
 * [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/VALUE_FROM_PERCENTILE.md)
+
+## Spread
+
+* [Variance](https://github.com/drexed/lite-ruby/blob/master/docs/VARIANCE.md)
+* [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
+* [Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/STANDARD_DEVIATION.md)
+* [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
+* [Relative Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/RELATIVE_STANDARD_DEVIATION.md)
+* [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)
 
 ## Monkey patches
 

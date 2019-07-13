@@ -1,7 +1,5 @@
 # Median
 
-The middle number in a sequence of numbers.
-
 ```ruby
 collection = [1, 1, 2, 3, 10]
 

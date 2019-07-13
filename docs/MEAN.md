@@ -1,7 +1,5 @@
 # Mean
 
-The average of all numbers.
-
 ```ruby
 collection = [1, 1, 2, 3, 10]
 

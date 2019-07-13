@@ -1,7 +1,5 @@
 # Percentile from Value
 
-The percentile closest to a given number.
-
 ```ruby
 collection = [1, 1, 2, 3, 10]
 

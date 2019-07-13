@@ -1,7 +1,5 @@
 # Mode
 
-The number that occurs most often within a set of numbers.
-
 ```ruby
 collection = [1, 1, 2, 3, 10]
 

@@ -1,7 +1,5 @@
 # Range
 
-The difference between the highest and lowest values within a set of numbers.
-
 ```ruby
 collection = [1, 1, 2, 3, 10]
 
