@@ -2,7 +2,7 @@
 
 module Lite
   module Statistics
-    class RelativeStandardDeviation < Lite::Statistics::Base
+    class CoefficientOfVariation < Lite::Statistics::Base
 
       def calculate
         return if collection.empty?

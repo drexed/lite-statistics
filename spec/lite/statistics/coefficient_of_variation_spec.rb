@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Lite::Statistics::RelativeStandardDeviation do
+RSpec.describe Lite::Statistics::CoefficientOfVariation do
   let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
   let(:n1) { 0.994796148546339 }
@@ -20,11 +20,7 @@ RSpec.describe Lite::Statistics::RelativeStandardDeviation do
   end
 
   describe '#monkey_patch' do
-    it 'to be 0.994796148546339 for relative_standard_deviation' do
-      expect(collection.relative_standard_deviation).to eq(n1)
-    end
-
-    it 'to be 0.994796148546339 for coefficient_of_variation' do
+    it 'to be 0.994796148546339' do
       expect(collection.coefficient_of_variation).to eq(n1)
     end
   end

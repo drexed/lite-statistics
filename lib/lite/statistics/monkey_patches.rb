@@ -3,6 +3,7 @@
 module Enumerable
 
   {
+    coefficient_of_variation: Lite::Statistics::CoefficientOfVariation,
     frequency: Lite::Statistics::Frequency,
     kurtosis: Lite::Statistics::Kurtosis,
     mean: Lite::Statistics::Mean,
@@ -12,7 +13,6 @@ module Enumerable
     population_standard_deviation: Lite::Statistics::PopulationStandardDeviation,
     population_variance: Lite::Statistics::PopulationVariance,
     range: Lite::Statistics::Range,
-    relative_standard_deviation: Lite::Statistics::RelativeStandardDeviation,
     skewness: Lite::Statistics::Skewness,
     standard_deviation: Lite::Statistics::StandardDeviation,
     value_from_percentile: Lite::Statistics::ValueFromPercentile,
@@ -23,7 +23,6 @@ module Enumerable
   end
 
   alias average mean
-  alias coefficient_of_variation relative_standard_deviation
   alias percentile percentile_from_value
   alias percentile_rank value_from_percentile
   alias sample_standard_deviation standard_deviation

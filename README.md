@@ -64,7 +64,7 @@ end
 * [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
 * [Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/STANDARD_DEVIATION.md) aka Sample Standard Deviation
 * [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
-* [Relative Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/RELATIVE_STANDARD_DEVIATION.md) aka Coefficient of Variation
+* [Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/COEFFICIENT_OF_VARIATION.md)
 * [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)
 
 ## Shape
