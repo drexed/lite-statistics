@@ -27,6 +27,7 @@ Or install it yourself as:
 * [Central tendency](#central-tendency)
 * [Dispersion](#dispersion)
 * [Spread](#spread)
+* [Shape](#shape)
 * [Monkey patches](#monkey-patches)
 
 ## Configurations
@@ -60,6 +61,11 @@ end
 * [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
 * [Relative Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/RELATIVE_STANDARD_DEVIATION.md)
 * [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)
+
+## Shape
+
+* [Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/SKEWNESS.md)
+* [Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/KURTOSIS.md)
 
 ## Monkey patches
 
