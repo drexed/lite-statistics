@@ -24,6 +24,7 @@ Or install it yourself as:
 ## Table of Contents
 
 * [Configurations](#configurations)
+* [Distribution](#distribution)
 * [Central tendency](#central-tendency)
 * [Dispersion](#dispersion)
 * [Spread](#spread)
@@ -40,6 +41,10 @@ Lite::Statistics.configure do |config|
   config.monkey_patches = true
 end
 ```
+
+## Distribution
+
+* [Frequency](https://github.com/drexed/lite-ruby/blob/master/docs/FREQUENCY.md)
 
 ## Central tendency
 

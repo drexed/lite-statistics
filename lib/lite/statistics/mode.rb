@@ -7,7 +7,7 @@ module Lite
       def calculate
         return if collection.empty?
 
-        top_two = frequency_distribution.sort_by { |_, val| -val }.take(2)
+        top_two = frequency.sort_by { |_, val| -val }.take(2)
         return if top_two.first.last == top_two.last.last
 
         top_two.first.first
@@ -15,8 +15,8 @@ module Lite
 
       private
 
-      def frequency_distribution
-        collection.each_with_object(Hash.new(0)) { |val, hash| hash[val] += 1 }
+      def frequency
+        Lite::Statistics::Frequency.calculate(collection)
       end
 
     end

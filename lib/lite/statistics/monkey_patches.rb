@@ -3,6 +3,7 @@
 module Enumerable
 
   {
+    frequency: Lite::Statistics::Frequency,
     kurtosis: Lite::Statistics::Kurtosis,
     mean: Lite::Statistics::Mean,
     median: Lite::Statistics::Median,
