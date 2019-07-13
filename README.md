@@ -48,23 +48,23 @@ end
 
 ## Central tendency
 
-* [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/MEAN.md)
+* [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/MEAN.md) aka Average
 * [Median](https://github.com/drexed/lite-ruby/blob/master/docs/MEDIAN.md)
 * [Mode](https://github.com/drexed/lite-ruby/blob/master/docs/MODE.md)
 
 ## Dispersion
 
 * [Range](https://github.com/drexed/lite-ruby/blob/master/docs/RANGE.md)
-* [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/PERCENTILE_FROM_VALUE.md)
-* [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/VALUE_FROM_PERCENTILE.md)
+* [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/PERCENTILE_FROM_VALUE.md) aka Percentile
+* [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/VALUE_FROM_PERCENTILE.md) aka Percentile Rank
 
 ## Spread
 
-* [Variance](https://github.com/drexed/lite-ruby/blob/master/docs/VARIANCE.md)
+* [Variance](https://github.com/drexed/lite-ruby/blob/master/docs/VARIANCE.md) aka Sample Variance
 * [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
-* [Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/STANDARD_DEVIATION.md)
+* [Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/STANDARD_DEVIATION.md) aka Sample Standard Deviation
 * [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
-* [Relative Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/RELATIVE_STANDARD_DEVIATION.md)
+* [Relative Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/RELATIVE_STANDARD_DEVIATION.md) aka Coefficient of Variation
 * [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)
 
 ## Shape

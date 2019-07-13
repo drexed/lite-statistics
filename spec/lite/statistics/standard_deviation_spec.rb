@@ -20,7 +20,11 @@ RSpec.describe Lite::Statistics::StandardDeviation do
   end
 
   describe '#monkey_patch' do
-    it 'to be 3.7815340802378072' do
+    it 'to be 3.7815340802378072 for standard_deviation' do
+      expect(collection.standard_deviation).to eq(n1)
+    end
+
+    it 'to be 3.7815340802378072 for sample_standard_deviation' do
       expect(collection.standard_deviation).to eq(n1)
     end
   end

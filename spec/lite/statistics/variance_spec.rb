@@ -20,8 +20,12 @@ RSpec.describe Lite::Statistics::Variance do
   end
 
   describe '#monkey_patch' do
-    it 'to be 14.299999999999999' do
+    it 'to be 14.299999999999999 for variance' do
       expect(collection.variance).to eq(n1)
+    end
+
+    it 'to be 14.299999999999999 for sample_variance' do
+      expect(collection.sample_variance).to eq(n1)
     end
   end
 

@@ -20,8 +20,12 @@ RSpec.describe Lite::Statistics::RelativeStandardDeviation do
   end
 
   describe '#monkey_patch' do
-    it 'to be 99.47961485463391' do
+    it 'to be 99.47961485463391 for relative_standard_deviation' do
       expect(collection.relative_standard_deviation).to eq(n1)
+    end
+
+    it 'to be 99.47961485463391 for coefficient_of_variation' do
+      expect(collection.coefficient_of_variation).to eq(n1)
     end
   end
 

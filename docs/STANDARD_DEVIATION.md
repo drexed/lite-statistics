@@ -13,4 +13,5 @@ Lite::Statistics::StandardDeviation.calculate(collection) #=> 3.7815340802378072
 # - or -
 
 collection.standard_deviation                             #=> 3.7815340802378072
+collection.sample_standard_deviation                      #=> 3.7815340802378072
 ```

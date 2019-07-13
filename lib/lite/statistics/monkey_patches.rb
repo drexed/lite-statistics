@@ -23,5 +23,10 @@ module Enumerable
   end
 
   alias average mean
+  alias coefficient_of_variation relative_standard_deviation
+  alias percentile percentile_from_value
+  alias percentile_rank value_from_percentile
+  alias sample_standard_deviation standard_deviation
+  alias sample_variance variance
 
 end

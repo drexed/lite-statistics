@@ -13,4 +13,5 @@ Lite::Statistics::PercentileFromValue.calculate(collection, 10) #=> 80
 # - or -
 
 collection.percentile_from_value(10)                            #=> 80
+collection.percentile(10)                                       #=> 80
 ```

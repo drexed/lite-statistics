@@ -13,4 +13,5 @@ Lite::Statistics::Variance.calculate(collection) #=> 14.299999999999999
 # - or -
 
 collection.variance                              #=> 14.299999999999999
+collection.sample_variance                       #=> 14.299999999999999
 ```

@@ -21,8 +21,12 @@ RSpec.describe Lite::Statistics::ValueFromPercentile do
   end
 
   describe '#monkey_patch' do
-    it 'to be 3' do
+    it 'to be 3 for value_from_percentile' do
       expect(collection.value_from_percentile(n1)).to eq(n2)
+    end
+
+    it 'to be 3 for percentile_rank' do
+      expect(collection.percentile_rank(n1)).to eq(n2)
     end
   end
 

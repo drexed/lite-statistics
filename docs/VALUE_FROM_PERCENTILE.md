@@ -13,4 +13,5 @@ Lite::Statistics::ValueFromPercentile.calculate(collection, 60) #=> 3
 # - or -
 
 collection.value_from_percentile(60)                            #=> 3
+collection.percentile_rank(60)                                  #=> 3
 ```
