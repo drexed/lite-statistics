@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/lite-statistics.svg)](http://badge.fury.io/rb/lite-statistics)
 [![Build Status](https://travis-ci.org/drexed/lite-statistics.svg?branch=master)](https://travis-ci.org/drexed/lite-statistics)
 
-Lite::Statistics is a library for converting statistics to different unit sizes or types.
+Lite::Statistics is a library for generate statistics from collections of data points.
 
 ## Installation
 
@@ -48,25 +48,6 @@ Including monkey patches will give you `Numeric` access to statistics.
 
 ```ruby
 [1, 2, 3, 1].mode #=> 1
-```
-
-## Temperature
-
-Option | Type | Default
---- | --- | ---
-from, to | symbol | `:celsius`, `:fahrenheit`, `:kelvin`
-
-```ruby
-temperature = Lite::Statistics::Temperature.new(2)
-temperature = temperature.convert(from: :fahrenheit, to: :celsius)      #=> -16.666666666666668
-
-# - or -
-
-Lite::Statistics::Temperature.convert(2, from: :celsius, to: :kelvin) #=> 275.15
-
-# - or -
-
-2.convert_temperature(from: :kelvin, to: :fahrenheit)                   #=> -456.07
 ```
 
 ## Development
