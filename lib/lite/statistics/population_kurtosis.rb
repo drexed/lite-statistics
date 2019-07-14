@@ -2,7 +2,7 @@
 
 module Lite
   module Statistics
-    class Kurtosis < Lite::Statistics::Base
+    class PopulationKurtosis < Lite::Statistics::Base
 
       def calculate
         return if collection.empty?
@@ -20,11 +20,11 @@ module Lite
       end
 
       def quarted_standard_deviation
-        sample_standard_deviation**4
+        population_standard_deviation**4
       end
 
-      def sample_standard_deviation
-        Lite::Statistics::SampleStandardDeviation.calculate(collection)
+      def population_standard_deviation
+        Lite::Statistics::PopulationStandardDeviation.calculate(collection)
       end
 
       def sum_quarted_deviation

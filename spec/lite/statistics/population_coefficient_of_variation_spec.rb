@@ -2,10 +2,10 @@
 
 require 'spec_helper'
 
-RSpec.describe Lite::Statistics::Skewness do
+RSpec.describe Lite::Statistics::PopulationCoefficientOfVariation do
   let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
-  let(:n1) { 1.188328915820243 }
+  let(:n1) { 0.994796148546339 }
 
   describe '#calculate' do
     it 'to be nil' do
@@ -14,14 +14,14 @@ RSpec.describe Lite::Statistics::Skewness do
       expect(klass.calculate).to eq(nil)
     end
 
-    it 'to be 1.188328915820243' do
+    it 'to be 0.994796148546339' do
       expect(klass.calculate).to eq(n1)
     end
   end
 
   describe '#monkey_patch' do
-    it 'to be 1.188328915820243' do
-      expect(collection.skewness).to eq(n1)
+    it 'to be 0.994796148546339' do
+      expect(collection.population_coefficient_of_variation).to eq(n1)
     end
   end
 

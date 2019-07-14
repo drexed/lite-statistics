@@ -61,19 +61,22 @@ end
 ## Spread
 
 * [Sample Variance](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_VARIANCE.md) aka Variance
-* [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
 * [Sample Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
-* [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
-* [Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/COEFFICIENT_OF_VARIATION.md)
+* [Sample Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_COEFFICIENT_OF_VARIATION.md) aka Coefficient of Variation
 * [Sample Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_ERROR.md) aka Standard Error
-* [Population Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_ERROR.md)
 * [Sample Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_ZSCORE.md) aka Z-Score
+* [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
+* [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
+* [Population Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_COEFFICIENT_OF_VARIATION.md)
+* [Population Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_ERROR.md)
 * [Population Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_ZSCORE.md)
 
 ## Shape
 
-* [Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/SKEWNESS.md)
-* [Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/KURTOSIS.md)
+* [Sample Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_SKEWNESS.md) aka Skewness
+* [Sample Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_KURTOSIS.md) aka Kurtosis
+* [Population Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_SKEWNESS.md)
+* [Population Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_KURTOSIS.md)
 
 ## Monkey patches
 

@@ -2,12 +2,12 @@
 
 module Lite
   module Statistics
-    class CoefficientOfVariation < Lite::Statistics::Base
+    class SampleCoefficientOfVariation < Lite::Statistics::Base
 
       def calculate
         return if collection.empty?
 
-        population_standard_deviation / mean
+        sample_standard_deviation / mean
       end
 
       private
@@ -16,8 +16,8 @@ module Lite
         Lite::Statistics::Mean.calculate(collection)
       end
 
-      def population_standard_deviation
-        Lite::Statistics::PopulationStandardDeviation.calculate(collection)
+      def sample_standard_deviation
+        Lite::Statistics::SampleStandardDeviation.calculate(collection)
       end
 
     end
