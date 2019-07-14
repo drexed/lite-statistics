@@ -60,9 +60,9 @@ end
 
 ## Spread
 
-* [Variance](https://github.com/drexed/lite-ruby/blob/master/docs/VARIANCE.md) aka Sample Variance
+* [Sample Variance](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_VARIANCE.md) aka Variance
 * [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
-* [Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/STANDARD_DEVIATION.md) aka Sample Standard Deviation
+* [Sample Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
 * [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
 * [Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/COEFFICIENT_OF_VARIATION.md)
 * [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)

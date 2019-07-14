@@ -13,10 +13,10 @@ module Enumerable
     population_standard_deviation: Lite::Statistics::PopulationStandardDeviation,
     population_variance: Lite::Statistics::PopulationVariance,
     range: Lite::Statistics::Range,
+    sample_variance: Lite::Statistics::SampleVariance,
+    sample_standard_deviation: Lite::Statistics::SampleStandardDeviation,
     skewness: Lite::Statistics::Skewness,
-    standard_deviation: Lite::Statistics::StandardDeviation,
     value_from_percentile: Lite::Statistics::ValueFromPercentile,
-    variance: Lite::Statistics::Variance,
     zscore: Lite::Statistics::Zscore
   }.each do |name, klass|
     define_method(name) { |*args| klass.calculate(self, *args) }
@@ -25,7 +25,7 @@ module Enumerable
   alias average mean
   alias percentile percentile_from_value
   alias percentile_rank value_from_percentile
-  alias sample_standard_deviation standard_deviation
-  alias sample_variance variance
+  alias standard_deviation sample_standard_deviation
+  alias variance sample_variance
 
 end

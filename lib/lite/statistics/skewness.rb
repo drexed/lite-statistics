@@ -20,11 +20,11 @@ module Lite
       end
 
       def cubed_standard_deviation
-        standard_deviation**3
+        sample_standard_deviation**3
       end
 
-      def standard_deviation
-        Lite::Statistics::StandardDeviation.calculate(collection)
+      def sample_standard_deviation
+        Lite::Statistics::SampleStandardDeviation.calculate(collection)
       end
 
       def sum_cubed_deviation

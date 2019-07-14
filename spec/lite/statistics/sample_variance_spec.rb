@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Lite::Statistics::Variance do
+RSpec.describe Lite::Statistics::SampleVariance do
   let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
   let(:n1) { 14.299999999999999 }
@@ -20,12 +20,12 @@ RSpec.describe Lite::Statistics::Variance do
   end
 
   describe '#monkey_patch' do
-    it 'to be 14.299999999999999 for variance' do
-      expect(collection.variance).to eq(n1)
-    end
-
     it 'to be 14.299999999999999 for sample_variance' do
       expect(collection.sample_variance).to eq(n1)
+    end
+
+    it 'to be 14.299999999999999 for variance' do
+      expect(collection.variance).to eq(n1)
     end
   end
 

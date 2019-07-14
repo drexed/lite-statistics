@@ -7,11 +7,11 @@ module Lite
       def calculate
         return if collection.size < 2
 
-        memo_standard_deviation = standard_deviation
-        return Array.new(collection.size, 0) if memo_standard_deviation.zero?
+        memo_sample_standard_deviation = sample_standard_deviation
+        return Array.new(collection.size, 0) if memo_sample_standard_deviation.zero?
 
         memo_mean = mean
-        collection.collect { |val| (val - memo_mean) / memo_standard_deviation }
+        collection.collect { |val| (val - memo_mean) / memo_sample_standard_deviation }
       end
 
       private
@@ -20,8 +20,8 @@ module Lite
         Lite::Statistics::Mean.calculate(collection)
       end
 
-      def standard_deviation
-        Lite::Statistics::StandardDeviation.calculate(collection)
+      def sample_standard_deviation
+        Lite::Statistics::SampleStandardDeviation.calculate(collection)
       end
 
     end

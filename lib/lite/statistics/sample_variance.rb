@@ -2,7 +2,7 @@
 
 module Lite
   module Statistics
-    class Variance < Lite::Statistics::Base
+    class SampleVariance < Lite::Statistics::Base
 
       def calculate
         return if collection.empty?

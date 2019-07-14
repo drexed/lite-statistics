@@ -20,11 +20,11 @@ module Lite
       end
 
       def quarted_standard_deviation
-        standard_deviation**4
+        sample_standard_deviation**4
       end
 
-      def standard_deviation
-        Lite::Statistics::StandardDeviation.calculate(collection)
+      def sample_standard_deviation
+        Lite::Statistics::SampleStandardDeviation.calculate(collection)
       end
 
       def sum_quarted_deviation
