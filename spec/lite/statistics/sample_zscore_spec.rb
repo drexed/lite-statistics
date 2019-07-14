@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe Lite::Statistics::Zscore do
+RSpec.describe Lite::Statistics::SampleZscore do
   let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
   let(:a1) do
@@ -28,7 +28,11 @@ RSpec.describe Lite::Statistics::Zscore do
   end
 
   describe '#monkey_patch' do
-    it 'to be [ ... ]' do
+    it 'to be [ ... ] for sample_zscore' do
+      expect(collection.sample_zscore).to eq(a1)
+    end
+
+    it 'to be [ ... ] for zscore' do
       expect(collection.zscore).to eq(a1)
     end
   end

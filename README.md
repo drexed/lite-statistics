@@ -65,7 +65,10 @@ end
 * [Sample Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
 * [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
 * [Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/COEFFICIENT_OF_VARIATION.md)
-* [Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/ZSCORE.md)
+* [Sample Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_ERROR.md) aka Standard Error
+* [Population Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_ERROR.md)
+* [Sample Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_ZSCORE.md) aka Z-Score
+* [Population Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_ZSCORE.md)
 
 ## Shape
 

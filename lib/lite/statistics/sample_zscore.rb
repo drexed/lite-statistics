@@ -2,7 +2,7 @@
 
 module Lite
   module Statistics
-    class Zscore < Lite::Statistics::Base
+    class SampleZscore < Lite::Statistics::Base
 
       def calculate
         return if collection.size < 2
