@@ -1,4 +1,4 @@
-# Sample Size
+# Sample|Population Size
 
 Alias: `size`
 
@@ -11,7 +11,7 @@ klass.sample_size
 
 # - or -
 
-Lite::Statistics::Descriptive.sample_size(collection)
+Lite::Statistics::Descriptive.population_size(collection)
 
 # - or -
 

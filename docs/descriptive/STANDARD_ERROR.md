@@ -1,4 +1,4 @@
-# Sample Standard Error
+# Sample|Population Standard Error
 
 Alias: `standard_error`
 
@@ -11,7 +11,7 @@ klass.sample_standard_error
 
 # - or -
 
-Lite::Statistics::Descriptive.sample_standard_error(collection)
+Lite::Statistics::Descriptive.population_standard_error(collection)
 
 # - or -
 

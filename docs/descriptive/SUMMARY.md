@@ -1,13 +1,12 @@
 # Sample|Population Summary
 
-Alias: `zscore`
+Alias: `summary`
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
 results = {
-  # All available calculations plus,
-  # ...
-  #
+  # - all documented calculations - ...
+  # - including value_from_percentile of 25, 50, and 75 (quartile) -
   quartile_1: 2,
   quartile_2: 3,
   quartile_3: 10

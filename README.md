@@ -52,13 +52,11 @@ Ex: `variance` => `sample_variance`
 #### Count
 
 * [Sum](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUM.md)
-* [Sample Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_SIZE.md) aka Size
-* [Population Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_SIZE.md)
+* [Sample|Population Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SIZE.md)
 
 #### Distribution
 
 * [Frequencies](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/FREQUENCIES.md)
-* [Midrange](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MIDRANGE.md) aka Midextreme
 * [Min](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MIN.md)
 * [Max](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MAX.md)
 * [Proportions](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/PROPORTIONS.md)
@@ -71,29 +69,23 @@ Ex: `variance` => `sample_variance`
 
 #### Dispersion
 
+* [Midrange](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MIDRANGE.md) aka Midextreme
 * [Range](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/RANGE.md)
 * [Percentile from Value](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/PERCENTILE_FROM_VALUE.md) aka Percentile
 * [Value from Percentile](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/VALUE_FROM_PERCENTILE.md) aka Percentile Rank
 
 #### Spread
 
-* [Sample Variance](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_VARIANCE.md) aka Variance
-* [Sample Standard Deviation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
-* [Sample Coefficient of Variation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_COEFFICIENT_OF_VARIATION.md) aka Coefficient of Variation
-* [Sample Standard Error](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_STANDARD_ERROR.md) aka Standard Error
-* [Sample Z-Score](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_ZSCORE.md) aka Z-Score
-* [Population Variance](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_VARIANCE.md)
-* [Population Standard Deviation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_STANDARD_DEVIATION.md)
-* [Population Coefficient of Variation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_COEFFICIENT_OF_VARIATION.md)
-* [Population Standard Error](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_STANDARD_ERROR.md)
-* [Population Z-Score](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_ZSCORE.md)
+* [Sample|Population Variance](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/VARIANCE.md)
+* [Sample|Population Standard Deviation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/STANDARD_DEVIATION.md)
+* [Sample|Population Coefficient of Variation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/COEFFICIENT_OF_VARIATION.md)
+* [Sample|Population Standard Error](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/STANDARD_ERROR.md)
+* [Sample|Population Z-Score](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/ZSCORE.md)
 
 #### Shape
 
-* [Sample Skewness](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_SKEWNESS.md) aka Skewness
-* [Sample Kurtosis](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_KURTOSIS.md) aka Kurtosis
-* [Population Skewness](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_SKEWNESS.md)
-* [Population Kurtosis](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_KURTOSIS.md)
+* [Sample|Population Skewness](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SKEWNESS.md)
+* [Sample|Population Kurtosis](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/KURTOSIS.md)
 
 ## Monkey patches
 

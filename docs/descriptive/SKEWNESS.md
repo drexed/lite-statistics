@@ -1,4 +1,4 @@
-# Sample Skewness
+# Sample|Population Skewness
 
 Alias: `skewness`
 
@@ -11,7 +11,7 @@ klass.sample_skewness
 
 # - or -
 
-Lite::Statistics::Descriptive.sample_skewness(collection)
+Lite::Statistics::Descriptive.population_skewness(collection)
 
 # - or -
 

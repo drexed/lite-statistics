@@ -1,4 +1,4 @@
-# Sample Z-Score
+# Sample|Population Z-Score
 
 Alias: `zscore`
 
@@ -16,7 +16,7 @@ klass.sample_zscore
 
 # - or -
 
-Lite::Statistics::Descriptive.sample_zscore(collection)
+Lite::Statistics::Descriptive.population_zscore(collection)
 
 # - or -
 

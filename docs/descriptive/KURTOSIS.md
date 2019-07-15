@@ -1,4 +1,4 @@
-# Sample Kurtosis
+# Sample|Population Kurtosis
 
 Alias: `kurtosis`
 
@@ -11,7 +11,7 @@ klass.sample_kurtosis
 
 # - or -
 
-Lite::Statistics::Descriptive.sample_kurtosis(collection)
+Lite::Statistics::Descriptive.population_kurtosis(collection)
 
 # - or -
 
