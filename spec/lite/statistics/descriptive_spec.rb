@@ -148,10 +148,10 @@ RSpec.describe Lite::Statistics::Descriptive do
   end
 
   describe '#sum' do
-    it 'to be nil' do
+    it 'to be 0' do
       klass = described_class.new([])
 
-      expect(klass.sum).to eq(nil)
+      expect(klass.sum).to eq(0)
     end
 
     it 'to be 17' do
@@ -180,8 +180,8 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_coefficient_of_variation).to eq(nil)
     end
 
-    it 'to be 0.994796148546339' do
-      expect(klass.population_coefficient_of_variation).to eq(0.994796148546339)
+    it 'to be 1.1122159059522962' do
+      expect(klass.population_coefficient_of_variation).to eq(1.1122159059522962)
     end
   end
 
@@ -198,8 +198,8 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_kurtosis).to eq(0)
     end
 
-    it 'to be 3.75877182258301' do
-      expect(klass.population_kurtosis).to eq(3.75877182258301)
+    it 'to be 2.405613966453127' do
+      expect(klass.population_kurtosis).to eq(2.405613966453127)
     end
   end
 
@@ -216,8 +216,8 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_skewness).to eq(0)
     end
 
-    it 'to be 1.66074014712668' do
-      expect(klass.population_skewness).to eq(1.66074014712668)
+    it 'to be 1.188328915820243' do
+      expect(klass.population_skewness).to eq(1.188328915820243)
     end
   end
 
@@ -228,8 +228,8 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_standard_deviation).to eq(nil)
     end
 
-    it 'to be 3.3823069050575527' do
-      expect(klass.population_standard_deviation).to eq(3.3823069050575527)
+    it 'to be 3.7815340802378072' do
+      expect(klass.population_standard_deviation).to eq(3.7815340802378072)
     end
   end
 
@@ -240,8 +240,8 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_standard_error).to eq(nil)
     end
 
-    it 'to be 1.512613632095123' do
-      expect(klass.population_standard_error).to eq(1.512613632095123)
+    it 'to be 1.6911534525287761' do
+      expect(klass.population_standard_error).to eq(1.6911534525287761)
     end
   end
 
@@ -252,19 +252,19 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_variance).to eq(nil)
     end
 
-    it 'to be 11.44' do
-      expect(klass.population_variance).to eq(11.44)
+    it 'to be 14.299999999999999' do
+      expect(klass.population_variance).to eq(14.299999999999999)
     end
   end
 
   describe '#population_zscore' do
     let(:a1) do
       [
-        -0.7095748751868991,
-        -0.7095748751868991,
-        -0.4139186771923578,
-        -0.11826247919781649,
-        1.9513309067639724
+        -0.6346630624175341,
+        -0.6346630624175341,
+        -0.37022011974356156,
+        -0.105777177069589,
+        1.7453234216482187
       ]
     end
 

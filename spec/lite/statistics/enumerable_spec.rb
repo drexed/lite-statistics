@@ -92,49 +92,55 @@ RSpec.describe Enumerable do
   end
 
   describe '#population_coefficient_of_variation' do
-    it 'to be 0.994796148546339' do
-      expect(collection.population_coefficient_of_variation).to eq(0.994796148546339)
+    it 'to be 1.1122159059522962' do
+      expect(collection.population_coefficient_of_variation).to eq(1.1122159059522962)
     end
   end
 
   describe '#population_kurtosis' do
-    it 'to be 3.75877182258301' do
-      expect(collection.population_kurtosis).to eq(3.75877182258301)
+    it 'to be 2.405613966453127' do
+      expect(collection.population_kurtosis).to eq(2.405613966453127)
     end
   end
 
   describe '#population_skewness' do
-    it 'to be 1.66074014712668' do
-      expect(collection.population_skewness).to eq(1.66074014712668)
+    it 'to be 1.188328915820243' do
+      expect(collection.population_skewness).to eq(1.188328915820243)
+    end
+  end
+
+  describe '#population_size' do
+    it 'to be 4' do
+      expect(collection.population_skewness).to eq(4)
     end
   end
 
   describe '#population_standard_deviation' do
-    it 'to be 3.3823069050575527' do
-      expect(collection.population_standard_deviation).to eq(3.3823069050575527)
+    it 'to be 3.7815340802378072' do
+      expect(collection.population_standard_deviation).to eq(3.7815340802378072)
     end
   end
 
   describe '#population_standard_error' do
-    it 'to be 1.512613632095123' do
-      expect(collection.population_standard_error).to eq(1.512613632095123)
+    it 'to be 1.6911534525287761' do
+      expect(collection.population_standard_error).to eq(1.6911534525287761)
     end
   end
 
   describe '#population_variance' do
-    it 'to be 11.44' do
-      expect(collection.population_variance).to eq(11.44)
+    it 'to be 14.299999999999999' do
+      expect(collection.population_variance).to eq(14.299999999999999)
     end
   end
 
   describe '#population_zscore' do
     let(:a1) do
       [
-        -0.7095748751868991,
-        -0.7095748751868991,
-        -0.4139186771923578,
-        -0.11826247919781649,
-        1.9513309067639724
+        -0.6346630624175341,
+        -0.6346630624175341,
+        -0.37022011974356156,
+        -0.105777177069589,
+        1.7453234216482187
       ]
     end
 
@@ -176,6 +182,12 @@ RSpec.describe Enumerable do
 
     it 'to be 1.188328915820243 for skewness' do
       expect(collection.skewness).to eq(n1)
+    end
+  end
+
+  describe '#sample_size' do
+    it 'to be 5' do
+      expect(collection.sample_skewness).to eq(5)
     end
   end
 

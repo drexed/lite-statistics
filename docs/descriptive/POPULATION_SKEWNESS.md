@@ -2,7 +2,7 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
-results = 1.66074014712668
+results = 1.188328915820243
 
 klass = Lite::Statistics::Descriptive.new(collection)
 klass.population_skewness

@@ -2,7 +2,7 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
-results = 3.75877182258301
+results = 2.405613966453127
 
 klass = Lite::Statistics::Descriptive.new(collection)
 klass.population_kurtosis

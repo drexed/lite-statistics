@@ -2,7 +2,7 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
-results = 0.994796148546339
+results = 1.1122159059522962
 
 klass = Lite::Statistics::Descriptive.new(collection)
 klass.population_coefficient_of_variation
