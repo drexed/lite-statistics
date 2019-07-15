@@ -46,6 +46,8 @@ end
 #### Distribution
 
 * [Frequency](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/FREQUENCY.md)
+* [Min](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/MIN.md)
+* [Max](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/MAX.md)
 
 #### Central tendency
 

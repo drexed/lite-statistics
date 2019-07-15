@@ -2,10 +2,11 @@
 
 module Enumerable
 
-  # Make this work
-  Lite::Statistics::Descriptive::CALCULATIONS.each do |name|
-    define_method(name) { |*args| Lite::Statistics::Descriptive.send(name, self, *args) }
-  end
+  Lite::Statistics::Descriptive::CALCULATIONS
+    .reject { |key, _| %i[max min].include?(key) }
+    .each do |name|
+      define_method(name) { |*args| Lite::Statistics::Descriptive.send(name, self, *args) }
+    end
 
   alias average mean
   alias coefficient_of_variation sample_coefficient_of_variation

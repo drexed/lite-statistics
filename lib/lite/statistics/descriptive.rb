@@ -4,28 +4,12 @@ module Lite
   module Statistics
     class Descriptive < Lite::Statistics::Base
 
-      CALCULATIONS ||= [
-        :frequency,
-        :mean,
-        :median,
-        :mode,
-        :percentile_from_value,
-        :population_coefficient_of_variation,
-        :population_kurtosis,
-        :population_skewness,
-        :population_standard_deviation,
-        :population_standard_error,
-        :population_variance,
-        :population_zscore,
-        :range,
-        :sample_coefficient_of_variation,
-        :sample_kurtosis,
-        :sample_skewness,
-        :sample_standard_deviation,
-        :sample_standard_error,
-        :sample_variance,
-        :sample_zscore,
-        :value_from_percentile
+      CALCULATIONS ||= %i[
+        frequency max mean median min mode percentile_from_value population_coefficient_of_variation
+        population_kurtosis population_skewness population_standard_deviation
+        population_standard_error population_variance population_zscore range
+        sample_coefficient_of_variation sample_kurtosis sample_skewness sample_standard_deviation
+        sample_standard_error sample_variance sample_zscore value_from_percentile
       ].freeze
 
       def initialize(collection)
@@ -33,12 +17,14 @@ module Lite
       end
 
       class << self
+
         CALCULATIONS.each do |name|
           define_method(name) do |collection, *args|
             klass = new(collection)
             klass.send(name, *args)
           end
         end
+
       end
 
       def frequency
@@ -49,6 +35,16 @@ module Lite
         end
       end
 
+      # rubocop:disable Style/UnneededSort
+      def max
+        memoize(:max) do
+          return if @collection.empty?
+
+          sort.last
+        end
+      end
+      # rubocop:enable Style/UnneededSort
+
       def mean
         memoize(:mean) do
           return if @collection.empty?
@@ -57,6 +53,7 @@ module Lite
         end
       end
 
+      # rubocop:disable Metrics/AbcSize
       def median
         memoize(:median) do
           return if @collection.empty?
@@ -65,6 +62,17 @@ module Lite
           (sort[(size / 2) - 1] + sort[size / 2]) / 2.0
         end
       end
+      # rubocop:enable Metrics/AbcSize
+
+      # rubocop:disable Style/UnneededSort
+      def min
+        memoize(:min) do
+          return if @collection.empty?
+
+          sort.first
+        end
+      end
+      # rubocop:enable Style/UnneededSort
 
       def mode
         memoize(:mode) do
@@ -81,7 +89,7 @@ module Lite
         memoize(:range) do
           return if @collection.empty?
 
-          sort.last - sort.first
+          max - min
         end
       end
 

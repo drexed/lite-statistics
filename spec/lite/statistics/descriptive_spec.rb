@@ -27,6 +27,18 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#max' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.max).to eq(nil)
+    end
+
+    it 'to be 10' do
+      expect(klass.max).to eq(10)
+    end
+  end
+
   describe '#mean' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -55,6 +67,18 @@ RSpec.describe Lite::Statistics::Descriptive do
       klass = described_class.new(collection)
 
       expect(klass.median).to eq(2.5)
+    end
+  end
+
+  describe '#min' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.min).to eq(nil)
+    end
+
+    it 'to be 1' do
+      expect(klass.min).to eq(1)
     end
   end
 

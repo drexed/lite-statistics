@@ -15,9 +15,9 @@ Layout/EmptyLinesAroundClassBody:
 Layout/EmptyLinesAroundModuleBody:
   EnforcedStyle: empty_lines_except_namespace
 Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/**/*'
-    - '*.gemspec'
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ExpandPathArguments:

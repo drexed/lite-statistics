@@ -15,10 +15,7 @@ RSpec.describe Lite::Statistics::Base do
     it 'to be {}' do
       random_one = rand(1..1_000_000)
       klass.send(:memoize, :test) { random_one }
-
-      random_two = rand(1..1_000_000)
-      klass.send(:memoize, :test) { random_two }
-
+      klass.send(:memoize, :test) { rand(1..1_000_000) }
       cache = klass.send(:cache)
 
       expect(cache[:test]).to eq(random_one)
