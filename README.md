@@ -5,9 +5,6 @@
 
 Lite::Statistics is a library for generate statistics from collections of data points.
 
-This library is built for performance as all calculated value are memoized so that the can
-be used in later calculations instead of being reran again.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -29,6 +26,7 @@ Or install it yourself as:
 * [Configurations](#configurations)
 * [Descriptive](#descriptive)
 * [Monkey patches](#monkey-patches)
+* [Performance](#performance)
 
 ## Configurations
 
@@ -88,6 +86,11 @@ Including monkey patches will give you `Enumerable` access to statistics.
 ```ruby
 [1, 2, 3, 1].mode #=> 1
 ```
+
+## Performance
+
+This library is built for performance as all calculated value are memoized so that the can
+be used in later calculations instead of being reran again.
 
 ## Development
 
