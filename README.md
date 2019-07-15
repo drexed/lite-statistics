@@ -41,6 +41,12 @@ end
 
 ## Descriptive
 
+#### Count
+
+* [Sample Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_SIZE.md) aka Size
+* [Population Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_SIZE.md)
+* [Sum](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUM.md)
+
 #### Distribution
 
 * [Frequencies](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/FREQUENCIES.md)

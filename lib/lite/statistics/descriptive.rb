@@ -5,12 +5,12 @@ module Lite
     class Descriptive < Lite::Statistics::Base
 
       CALCULATIONS ||= %i[
-        frequencies max mean median min mode proportions range percentile_from_value
-        population_coefficient_of_variation population_kurtosis population_skewness
-        population_standard_deviation population_standard_error
-        population_variance population_zscore sample_coefficient_of_variation
-        sample_kurtosis sample_skewness sample_standard_deviation sample_standard_error
-        sample_variance sample_zscore value_from_percentile
+        frequencies max mean median min mode proportions percentile_from_value
+        population_coefficient_of_variation population_kurtosis population_size population_skewness
+        population_standard_deviation population_standard_error range population_variance
+        population_zscore sample_coefficient_of_variation sample_kurtosis sample_size
+        sample_skewness sample_standard_deviation sample_standard_error sample_variance
+        sample_zscore sum value_from_percentile
       ].freeze
 
       def initialize(collection)
@@ -86,6 +86,20 @@ module Lite
         end
       end
 
+      def percentile_from_value(value)
+        memoize(:percentile_from_value) do
+          return if @collection.empty?
+
+          (sort.index(value) / size.to_f * 100).ceil
+        end
+      end
+
+      def population_size
+        memoize(:population_size) do
+          @collection.size - 1
+        end
+      end
+
       def proportions
         memoize(:frequencies) do
           return if @collection.empty?
@@ -102,11 +116,15 @@ module Lite
         end
       end
 
-      def percentile_from_value(value)
-        memoize(:percentile_from_value) do
-          return if @collection.empty?
+      def sample_size
+        memoize(:sample_size) do
+          @collection.size
+        end
+      end
 
-          (sort.index(value) / size.to_f * 100).ceil
+      def sum
+        memoize(:sum) do
+          @collection.sum
         end
       end
 
@@ -116,22 +134,6 @@ module Lite
 
           index = (percentile.to_f / 100 * size).ceil
           sort[index]
-        end
-      end
-
-      def population_variance
-        memoize(:population_variance) do
-          return if @collection.empty?
-
-          sumed_deviation(2) / size.to_f
-        end
-      end
-
-      def sample_variance
-        memoize(:sample_variance) do
-          return if @collection.empty?
-
-          sumed_deviation(2) / (size.to_f - 1)
         end
       end
 
@@ -152,7 +154,7 @@ module Lite
             return 0 if size == 1
 
             quarted_standard_deviation = send("#{type}_standard_deviation")**4
-            sumed_deviation(4) / ((size - 1) * quarted_standard_deviation.to_f)
+            sum_of_power(4) / (send("#{type}_size") * quarted_standard_deviation.to_f)
           end
         end
 
@@ -163,7 +165,7 @@ module Lite
             return 0 if size == 1
 
             cubed_standard_deviation = send("#{type}_standard_deviation")**3
-            sumed_deviation(3) / ((size - 1) * cubed_standard_deviation.to_f)
+            sum_of_power(3) / (send("#{type}_size") * cubed_standard_deviation.to_f)
           end
         end
 
@@ -185,6 +187,15 @@ module Lite
           end
         end
 
+        name = "#{type}_variance".to_sym
+        define_method(name) do
+          memoize(name) do
+            return if @collection.empty?
+
+            sum_of_power(2) / send("#{type}_size").to_f
+          end
+        end
+
         name = "#{type}_zscore".to_sym
         define_method(name) do
           memoize(name) do
@@ -202,6 +213,7 @@ module Lite
       alias percentile percentile_from_value
       alias percentile_rank value_from_percentile
       alias skewness sample_skewness
+      alias size sample_size
       alias standard_deviation sample_standard_deviation
       alias standard_error sample_standard_error
       alias variance sample_variance
@@ -209,25 +221,13 @@ module Lite
 
       private
 
-      def size
-        memoize(:size) do
-          @collection.size
-        end
-      end
-
       def sort
         memoize(:sort) do
           @collection.sort
         end
       end
 
-      def sum
-        memoize(:sum) do
-          @collection.sum
-        end
-      end
-
-      def sumed_deviation(power)
+      def sum_of_power(power)
         @collection.inject(0) { |acc, val| acc + (val - mean)**power }
       end
 

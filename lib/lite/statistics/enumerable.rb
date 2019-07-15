@@ -3,7 +3,7 @@
 module Enumerable
 
   Lite::Statistics::Descriptive::CALCULATIONS.each do |name|
-    next if %i[max min].include?(name)
+    next if %i[max min sum].include?(name)
 
     define_method(name) { |*args| Lite::Statistics::Descriptive.send(name, self, *args) }
   end
@@ -14,6 +14,7 @@ module Enumerable
   alias percentile percentile_from_value
   alias percentile_rank value_from_percentile
   alias skewness sample_skewness
+  alias size sample_size
   alias standard_deviation sample_standard_deviation
   alias standard_error sample_standard_error
   alias variance sample_variance

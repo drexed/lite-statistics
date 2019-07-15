@@ -44,6 +44,19 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#percentile_from_value' do
+    let(:n1) { 10 }
+    let(:n2) { 80 }
+
+    it 'to be 80 percentile_from_value' do
+      expect(collection.percentile_from_value(n1)).to eq(n2)
+    end
+
+    it 'to be 80 percentile' do
+      expect(collection.percentile(n1)).to eq(n2)
+    end
+  end
+
   describe '#proportions' do
     let(:h1) do
       {
@@ -65,19 +78,6 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#percentile_from_value' do
-    let(:n1) { 10 }
-    let(:n2) { 80 }
-
-    it 'to be 80 percentile_from_value' do
-      expect(collection.percentile_from_value(n1)).to eq(n2)
-    end
-
-    it 'to be 80 percentile' do
-      expect(collection.percentile(n1)).to eq(n2)
-    end
-  end
-
   describe '#value_from_percentile' do
     let(:n1) { 60 }
     let(:n2) { 3 }
@@ -91,39 +91,9 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#population_variance' do
-    it 'to be 11.44' do
-      expect(collection.population_variance).to eq(11.44)
-    end
-  end
-
-  describe '#sample_variance' do
-    let(:n1) { 14.299999999999999 }
-
-    it 'to be 14.299999999999999 for sample_variance' do
-      expect(collection.sample_variance).to eq(n1)
-    end
-
-    it 'to be 14.299999999999999 for variance' do
-      expect(collection.variance).to eq(n1)
-    end
-  end
-
   describe '#population_coefficient_of_variation' do
     it 'to be 0.994796148546339' do
       expect(collection.population_coefficient_of_variation).to eq(0.994796148546339)
-    end
-  end
-
-  describe '#sample_coefficient_of_variation' do
-    let(:n1) { 1.1122159059522962 }
-
-    it 'to be 1.1122159059522962 for sample_coefficient_of_variation' do
-      expect(collection.sample_coefficient_of_variation).to eq(n1)
-    end
-
-    it 'to be 1.1122159059522962 for coefficient_of_variation' do
-      expect(collection.coefficient_of_variation).to eq(n1)
     end
   end
 
@@ -133,33 +103,9 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#sample_kurtosis' do
-    let(:n1) { 2.405613966453127 }
-
-    it 'to be 2.405613966453127 for sample_kurtosis' do
-      expect(collection.sample_kurtosis).to eq(n1)
-    end
-
-    it 'to be 2.405613966453127 for kurtosis' do
-      expect(collection.kurtosis).to eq(n1)
-    end
-  end
-
   describe '#population_skewness' do
     it 'to be 1.66074014712668' do
       expect(collection.population_skewness).to eq(1.66074014712668)
-    end
-  end
-
-  describe '#sample_skewness' do
-    let(:n1) { 1.188328915820243 }
-
-    it 'to be 1.188328915820243 for sample_skewness' do
-      expect(collection.sample_skewness).to eq(n1)
-    end
-
-    it 'to be 1.188328915820243 for skewness' do
-      expect(collection.skewness).to eq(n1)
     end
   end
 
@@ -169,33 +115,15 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#sample_standard_deviation' do
-    let(:n1) { 3.7815340802378072 }
-
-    it 'to be 3.7815340802378072 for sample_standard_deviation' do
-      expect(collection.sample_standard_deviation).to eq(n1)
-    end
-
-    it 'to be 3.7815340802378072 for standard_deviation' do
-      expect(collection.standard_deviation).to eq(n1)
-    end
-  end
-
   describe '#population_standard_error' do
     it 'to be 1.512613632095123' do
       expect(collection.population_standard_error).to eq(1.512613632095123)
     end
   end
 
-  describe '#sample_standard_error' do
-    let(:n1) { 1.6911534525287761 }
-
-    it 'to be 1.6911534525287761 for sample_standard_error' do
-      expect(collection.sample_standard_error).to eq(n1)
-    end
-
-    it 'to be 1.6911534525287761 for standard_error' do
-      expect(collection.standard_error).to eq(n1)
+  describe '#population_variance' do
+    it 'to be 11.44' do
+      expect(collection.population_variance).to eq(11.44)
     end
   end
 
@@ -212,6 +140,78 @@ RSpec.describe Enumerable do
 
     it 'to be [ ... ]' do
       expect(collection.population_zscore).to eq(a1)
+    end
+  end
+
+  describe '#sample_coefficient_of_variation' do
+    let(:n1) { 1.1122159059522962 }
+
+    it 'to be 1.1122159059522962 for sample_coefficient_of_variation' do
+      expect(collection.sample_coefficient_of_variation).to eq(n1)
+    end
+
+    it 'to be 1.1122159059522962 for coefficient_of_variation' do
+      expect(collection.coefficient_of_variation).to eq(n1)
+    end
+  end
+
+  describe '#sample_kurtosis' do
+    let(:n1) { 2.405613966453127 }
+
+    it 'to be 2.405613966453127 for sample_kurtosis' do
+      expect(collection.sample_kurtosis).to eq(n1)
+    end
+
+    it 'to be 2.405613966453127 for kurtosis' do
+      expect(collection.kurtosis).to eq(n1)
+    end
+  end
+
+  describe '#sample_skewness' do
+    let(:n1) { 1.188328915820243 }
+
+    it 'to be 1.188328915820243 for sample_skewness' do
+      expect(collection.sample_skewness).to eq(n1)
+    end
+
+    it 'to be 1.188328915820243 for skewness' do
+      expect(collection.skewness).to eq(n1)
+    end
+  end
+
+  describe '#sample_standard_deviation' do
+    let(:n1) { 3.7815340802378072 }
+
+    it 'to be 3.7815340802378072 for sample_standard_deviation' do
+      expect(collection.sample_standard_deviation).to eq(n1)
+    end
+
+    it 'to be 3.7815340802378072 for standard_deviation' do
+      expect(collection.standard_deviation).to eq(n1)
+    end
+  end
+
+  describe '#sample_standard_error' do
+    let(:n1) { 1.6911534525287761 }
+
+    it 'to be 1.6911534525287761 for sample_standard_error' do
+      expect(collection.sample_standard_error).to eq(n1)
+    end
+
+    it 'to be 1.6911534525287761 for standard_error' do
+      expect(collection.standard_error).to eq(n1)
+    end
+  end
+
+  describe '#sample_variance' do
+    let(:n1) { 14.299999999999999 }
+
+    it 'to be 14.299999999999999 for sample_variance' do
+      expect(collection.sample_variance).to eq(n1)
+    end
+
+    it 'to be 14.299999999999999 for variance' do
+      expect(collection.variance).to eq(n1)
     end
   end
 

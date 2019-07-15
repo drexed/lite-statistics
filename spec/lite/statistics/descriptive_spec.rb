@@ -100,6 +100,20 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#percentile_from_value' do
+    let(:n1) { 10 }
+
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.percentile_from_value(n1)).to eq(nil)
+    end
+
+    it 'to be 80' do
+      expect(klass.percentile_from_value(n1)).to eq(80)
+    end
+  end
+
   describe '#proportions' do
     let(:h1) do
       {
@@ -133,17 +147,15 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#percentile_from_value' do
-    let(:n1) { 10 }
-
+  describe '#sum' do
     it 'to be nil' do
       klass = described_class.new([])
 
-      expect(klass.percentile_from_value(n1)).to eq(nil)
+      expect(klass.sum).to eq(nil)
     end
 
-    it 'to be 80' do
-      expect(klass.percentile_from_value(n1)).to eq(80)
+    it 'to be 17' do
+      expect(klass.sum).to eq(17)
     end
   end
 
@@ -161,30 +173,6 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#population_variance' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.population_variance).to eq(nil)
-    end
-
-    it 'to be 11.44' do
-      expect(klass.population_variance).to eq(11.44)
-    end
-  end
-
-  describe '#sample_variance' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.sample_variance).to eq(nil)
-    end
-
-    it 'to be 14.299999999999999' do
-      expect(klass.sample_variance).to eq(14.299999999999999)
-    end
-  end
-
   describe '#population_coefficient_of_variation' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -194,18 +182,6 @@ RSpec.describe Lite::Statistics::Descriptive do
 
     it 'to be 0.994796148546339' do
       expect(klass.population_coefficient_of_variation).to eq(0.994796148546339)
-    end
-  end
-
-  describe '#sample_coefficient_of_variation' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.sample_coefficient_of_variation).to eq(nil)
-    end
-
-    it 'to be 1.1122159059522962' do
-      expect(klass.sample_coefficient_of_variation).to eq(1.1122159059522962)
     end
   end
 
@@ -227,24 +203,6 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#sample_kurtosis' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.sample_kurtosis).to eq(nil)
-    end
-
-    it 'to be 0' do
-      allow(klass).to receive(:size).and_return(1)
-
-      expect(klass.sample_kurtosis).to eq(0)
-    end
-
-    it 'to be 2.405613966453127' do
-      expect(klass.sample_kurtosis).to eq(2.405613966453127)
-    end
-  end
-
   describe '#population_skewness' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -263,24 +221,6 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#sample_skewness' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.sample_skewness).to eq(nil)
-    end
-
-    it 'to be 0' do
-      allow(klass).to receive(:size).and_return(1)
-
-      expect(klass.sample_skewness).to eq(0)
-    end
-
-    it 'to be 1.188328915820243' do
-      expect(klass.sample_skewness).to eq(1.188328915820243)
-    end
-  end
-
   describe '#population_standard_deviation' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -290,18 +230,6 @@ RSpec.describe Lite::Statistics::Descriptive do
 
     it 'to be 3.3823069050575527' do
       expect(klass.population_standard_deviation).to eq(3.3823069050575527)
-    end
-  end
-
-  describe '#sample_standard_deviation' do
-    it 'to be nil' do
-      klass = described_class.new([])
-
-      expect(klass.sample_standard_deviation).to eq(nil)
-    end
-
-    it 'to be 3.7815340802378072' do
-      expect(klass.sample_standard_deviation).to eq(3.7815340802378072)
     end
   end
 
@@ -317,15 +245,15 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#sample_standard_error' do
+  describe '#population_variance' do
     it 'to be nil' do
       klass = described_class.new([])
 
-      expect(klass.sample_standard_error).to eq(nil)
+      expect(klass.population_variance).to eq(nil)
     end
 
-    it 'to be 1.6911534525287761' do
-      expect(klass.sample_standard_error).to eq(1.6911534525287761)
+    it 'to be 11.44' do
+      expect(klass.population_variance).to eq(11.44)
     end
   end
 
@@ -354,6 +282,90 @@ RSpec.describe Lite::Statistics::Descriptive do
 
     it 'to be [ ... ]' do
       expect(klass.population_zscore).to eq(a1)
+    end
+  end
+
+  describe '#sample_coefficient_of_variation' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_coefficient_of_variation).to eq(nil)
+    end
+
+    it 'to be 1.1122159059522962' do
+      expect(klass.sample_coefficient_of_variation).to eq(1.1122159059522962)
+    end
+  end
+
+  describe '#sample_kurtosis' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_kurtosis).to eq(nil)
+    end
+
+    it 'to be 0' do
+      allow(klass).to receive(:size).and_return(1)
+
+      expect(klass.sample_kurtosis).to eq(0)
+    end
+
+    it 'to be 2.405613966453127' do
+      expect(klass.sample_kurtosis).to eq(2.405613966453127)
+    end
+  end
+
+  describe '#sample_skewness' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_skewness).to eq(nil)
+    end
+
+    it 'to be 0' do
+      allow(klass).to receive(:size).and_return(1)
+
+      expect(klass.sample_skewness).to eq(0)
+    end
+
+    it 'to be 1.188328915820243' do
+      expect(klass.sample_skewness).to eq(1.188328915820243)
+    end
+  end
+
+  describe '#sample_standard_deviation' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_standard_deviation).to eq(nil)
+    end
+
+    it 'to be 3.7815340802378072' do
+      expect(klass.sample_standard_deviation).to eq(3.7815340802378072)
+    end
+  end
+
+  describe '#sample_standard_error' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_standard_error).to eq(nil)
+    end
+
+    it 'to be 1.6911534525287761' do
+      expect(klass.sample_standard_error).to eq(1.6911534525287761)
+    end
+  end
+
+  describe '#sample_variance' do
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.sample_variance).to eq(nil)
+    end
+
+    it 'to be 14.299999999999999' do
+      expect(klass.sample_variance).to eq(14.299999999999999)
     end
   end
 
