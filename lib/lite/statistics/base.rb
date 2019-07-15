@@ -11,8 +11,6 @@ module Lite
       end
 
       def memoize(key, &block)
-        return cache[key] if cache.key?(key)
-
         cache[key] ||= yield(block)
       end
 

@@ -139,6 +139,12 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#population_summary' do
+    it 'to be 14.299999999999999' do
+      expect(collection.population_summary[:population_variance]).to eq(14.299999999999999)
+    end
+  end
+
   describe '#population_variance' do
     it 'to be 14.299999999999999' do
       expect(collection.population_variance).to eq(14.299999999999999)
@@ -146,18 +152,17 @@ RSpec.describe Enumerable do
   end
 
   describe '#population_zscore' do
-    let(:a1) do
-      [
-        -0.6346630624175341,
-        -0.6346630624175341,
-        -0.37022011974356156,
-        -0.105777177069589,
-        1.7453234216482187
-      ]
+    let(:h1) do
+      {
+        1 => -0.6346630624175341,
+        2 => -0.37022011974356156,
+        3 => -0.105777177069589,
+        10 => 1.7453234216482187
+      }
     end
 
     it 'to be [ ... ]' do
-      expect(collection.population_zscore).to eq(a1)
+      expect(collection.population_zscore).to eq(h1)
     end
   end
 
@@ -227,6 +232,12 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#sample_summary' do
+    it 'to be 11.44' do
+      expect(collection.sample_summary[:sample_variance]).to eq(11.44)
+    end
+  end
+
   describe '#sample_variance' do
     let(:n1) { 11.44 }
 
@@ -240,22 +251,21 @@ RSpec.describe Enumerable do
   end
 
   describe '#sample_zscore' do
-    let(:a1) do
-      [
-        -0.7095748751868991,
-        -0.7095748751868991,
-        -0.4139186771923578,
-        -0.11826247919781649,
-        1.9513309067639724
-      ]
+    let(:h1) do
+      {
+        1 => -0.7095748751868991,
+        2 => -0.4139186771923578,
+        3 => -0.11826247919781649,
+        10 => 1.9513309067639724
+      }
     end
 
     it 'to be [ ... ] for sample_zscore' do
-      expect(collection.sample_zscore).to eq(a1)
+      expect(collection.sample_zscore).to eq(h1)
     end
 
     it 'to be [ ... ] for zscore' do
-      expect(collection.zscore).to eq(a1)
+      expect(collection.zscore).to eq(h1)
     end
   end
 

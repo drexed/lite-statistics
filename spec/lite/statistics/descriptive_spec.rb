@@ -257,6 +257,12 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#population_summary' do
+    it 'to be 14.299999999999999' do
+      expect(klass.population_summary[:population_variance]).to eq(14.299999999999999)
+    end
+  end
+
   describe '#population_variance' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -270,14 +276,13 @@ RSpec.describe Lite::Statistics::Descriptive do
   end
 
   describe '#population_zscore' do
-    let(:a1) do
-      [
-        -0.6346630624175341,
-        -0.6346630624175341,
-        -0.37022011974356156,
-        -0.105777177069589,
-        1.7453234216482187
-      ]
+    let(:h1) do
+      {
+        1 => -0.6346630624175341,
+        2 => -0.37022011974356156,
+        3 => -0.105777177069589,
+        10 => 1.7453234216482187
+      }
     end
 
     it 'to be nil' do
@@ -286,14 +291,14 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.population_zscore).to eq(nil)
     end
 
-    it 'to be [ 0, ... ]' do
+    it 'to be {}' do
       allow(klass).to receive(:population_standard_deviation).and_return(0)
 
-      expect(klass.population_zscore).to eq([0, 0, 0, 0, 0])
+      expect(klass.population_zscore).to eq({})
     end
 
-    it 'to be [ ... ]' do
-      expect(klass.population_zscore).to eq(a1)
+    it 'to be { ... }' do
+      expect(klass.population_zscore).to eq(h1)
     end
   end
 
@@ -369,6 +374,12 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#sample_summary' do
+    it 'to be 11.44' do
+      expect(klass.sample_summary[:sample_variance]).to eq(11.44)
+    end
+  end
+
   describe '#sample_variance' do
     it 'to be nil' do
       klass = described_class.new([])
@@ -382,14 +393,13 @@ RSpec.describe Lite::Statistics::Descriptive do
   end
 
   describe '#sample_zscore' do
-    let(:a1) do
-      [
-        -0.7095748751868991,
-        -0.7095748751868991,
-        -0.4139186771923578,
-        -0.11826247919781649,
-        1.9513309067639724
-      ]
+    let(:h1) do
+      {
+        1 => -0.7095748751868991,
+        2 => -0.4139186771923578,
+        3 => -0.11826247919781649,
+        10 => 1.9513309067639724
+      }
     end
 
     it 'to be nil' do
@@ -398,14 +408,14 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.sample_zscore).to eq(nil)
     end
 
-    it 'to be [ 0, ... ]' do
+    it 'to be {}' do
       allow(klass).to receive(:sample_standard_deviation).and_return(0)
 
-      expect(klass.sample_zscore).to eq([0, 0, 0, 0, 0])
+      expect(klass.sample_zscore).to eq({})
     end
 
-    it 'to be [ ... ]' do
-      expect(klass.sample_zscore).to eq(a1)
+    it 'to be { ... }' do
+      expect(klass.sample_zscore).to eq(h1)
     end
   end
 

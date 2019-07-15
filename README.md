@@ -41,6 +41,14 @@ end
 
 ## Descriptive
 
+Sample|Population calculations will have a shorthand alias that defaults to sample.
+
+Ex: `variance` => `sample_variance`
+
+#### Summary
+
+* [Sample|Population Summary](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUMMARY.md)
+
 #### Count
 
 * [Sum](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUM.md)

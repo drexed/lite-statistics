@@ -7,10 +7,10 @@ module Lite
       CALCULATIONS ||= %i[
         frequencies max mean median midrange min mode proportions percentile_from_value
         population_coefficient_of_variation population_kurtosis population_size population_skewness
-        population_standard_deviation population_standard_error range population_variance
-        population_zscore sample_coefficient_of_variation sample_kurtosis sample_size
-        sample_skewness sample_standard_deviation sample_standard_error sample_variance
-        sample_zscore sum value_from_percentile
+        population_standard_deviation population_standard_error population_summary
+        population_variance population_zscore range sample_coefficient_of_variation sample_kurtosis
+        sample_size sample_skewness sample_standard_deviation sample_standard_error sample_summary
+        sample_variance sample_zscore sum value_from_percentile
       ].freeze
 
       def initialize(collection)
@@ -54,6 +54,8 @@ module Lite
         end
       end
 
+      alias average mean
+
       # rubocop:disable Metrics/AbcSize
       def median
         memoize(:median) do
@@ -87,16 +89,94 @@ module Lite
       end
 
       def percentile_from_value(value)
-        memoize(:percentile_from_value) do
+        memoize("percentile_from_value_#{value}".to_sym) do
           return if @collection.empty?
 
           (sort.index(value) / size.to_f * 100).ceil
         end
       end
 
+      alias percentile percentile_from_value
+
+      def population_coefficient_of_variation
+        memoize(:population_coefficient_of_variation) do
+          return if @collection.empty?
+
+          population_standard_deviation / mean
+        end
+      end
+
       def population_size
         memoize(:population_size) do
           @collection.size - 1
+        end
+      end
+
+      def population_kurtosis
+        memoize(:population_kurtosis) do
+          return if @collection.empty?
+          return 0 if size == 1
+
+          quarted_standard_deviation = population_standard_deviation**4
+          sum_of_power(4) / (population_size * quarted_standard_deviation.to_f)
+        end
+      end
+
+      def population_skewness
+        memoize(:population_skewness) do
+          return if @collection.empty?
+          return 0 if size == 1
+
+          cubed_standard_deviation = population_standard_deviation**3
+          sum_of_power(3) / (population_size * cubed_standard_deviation.to_f)
+        end
+      end
+
+      def population_standard_deviation
+        memoize(:population_standard_deviation) do
+          return if @collection.empty?
+
+          Math.sqrt(population_variance)
+        end
+      end
+
+      def population_standard_error
+        memoize(:population_standard_error) do
+          return if @collection.empty?
+
+          population_standard_deviation / Math.sqrt(population_size)
+        end
+      end
+
+      def population_summary
+        base_summary.merge(
+          population_coefficient_of_variation: population_coefficient_of_variation,
+          population_kurtosis: population_kurtosis,
+          population_size: population_size,
+          population_skewness: population_skewness,
+          population_standard_deviation: population_standard_deviation,
+          population_standard_error: population_standard_error,
+          population_variance: population_variance,
+          population_zscore: population_zscore
+        )
+      end
+
+      def population_variance
+        memoize(:population_variance) do
+          return if @collection.empty?
+
+          sum_of_power(2) / population_size.to_f
+        end
+      end
+
+      def population_zscore
+        memoize(:population_zscore) do
+          return if size < 2
+          return Hash.new(0) if population_standard_deviation.zero?
+
+          @collection.each_with_object({}) do |val, hash|
+            hash[val] ||= (val - mean) / population_standard_deviation
+          end
         end
       end
 
@@ -107,6 +187,8 @@ module Lite
           [min, max].sum / 2.0
         end
       end
+
+      alias midextreme midrange
 
       def proportions
         memoize(:proportions) do
@@ -124,11 +206,105 @@ module Lite
         end
       end
 
+      def sample_coefficient_of_variation
+        memoize(:sample_coefficient_of_variation) do
+          return if @collection.empty?
+
+          sample_standard_deviation / mean
+        end
+      end
+
+      alias coefficient_of_variation sample_coefficient_of_variation
+
       def sample_size
         memoize(:sample_size) do
           @collection.size
         end
       end
+
+      alias size sample_size
+
+      def sample_kurtosis
+        memoize(:sample_kurtosis) do
+          return if @collection.empty?
+          return 0 if size == 1
+
+          quarted_standard_deviation = sample_standard_deviation**4
+          sum_of_power(4) / (sample_size * quarted_standard_deviation.to_f)
+        end
+      end
+
+      alias kurtosis sample_kurtosis
+
+      def sample_skewness
+        memoize(:sample_skewness) do
+          return if @collection.empty?
+          return 0 if size == 1
+
+          cubed_standard_deviation = sample_standard_deviation**3
+          sum_of_power(3) / (sample_size * cubed_standard_deviation.to_f)
+        end
+      end
+
+      alias skewness sample_skewness
+
+      def sample_standard_deviation
+        memoize(:sample_standard_deviation) do
+          return if @collection.empty?
+
+          Math.sqrt(sample_variance)
+        end
+      end
+
+      alias standard_deviation sample_standard_deviation
+
+      def sample_standard_error
+        memoize(:sample_standard_error) do
+          return if @collection.empty?
+
+          sample_standard_deviation / Math.sqrt(sample_size)
+        end
+      end
+
+      alias standard_error sample_standard_error
+
+      def sample_summary
+        base_summary.merge(
+          sample_coefficient_of_variation: sample_coefficient_of_variation,
+          sample_kurtosis: sample_kurtosis,
+          sample_size: sample_size,
+          sample_skewness: sample_skewness,
+          sample_standard_deviation: sample_standard_deviation,
+          sample_standard_error: sample_standard_error,
+          sample_variance: sample_variance,
+          sample_zscore: sample_zscore
+        )
+      end
+
+      alias summary sample_summary
+
+      def sample_variance
+        memoize(:sample_variance) do
+          return if @collection.empty?
+
+          sum_of_power(2) / sample_size.to_f
+        end
+      end
+
+      alias variance sample_variance
+
+      def sample_zscore
+        memoize(:sample_zscore) do
+          return if size < 2
+          return Hash.new(0) if sample_standard_deviation.zero?
+
+          @collection.each_with_object({}) do |val, hash|
+            hash[val] ||= (val - mean) / sample_standard_deviation
+          end
+        end
+      end
+
+      alias zscore sample_zscore
 
       def sum
         memoize(:sum) do
@@ -137,7 +313,7 @@ module Lite
       end
 
       def value_from_percentile(percentile)
-        memoize(:value_from_percentile) do
+        memoize("value_from_percentile_#{percentile}".to_sym) do
           return if @collection.empty?
 
           index = (percentile.to_f / 100 * size).ceil
@@ -145,90 +321,30 @@ module Lite
         end
       end
 
-      %i[population sample].each do |type|
-        name = "#{type}_coefficient_of_variation".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-
-            send("#{type}_standard_deviation") / mean
-          end
-        end
-
-        name = "#{type}_kurtosis".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-            return 0 if size == 1
-
-            quarted_standard_deviation = send("#{type}_standard_deviation")**4
-            sum_of_power(4) / (send("#{type}_size") * quarted_standard_deviation.to_f)
-          end
-        end
-
-        name = "#{type}_skewness".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-            return 0 if size == 1
-
-            cubed_standard_deviation = send("#{type}_standard_deviation")**3
-            sum_of_power(3) / (send("#{type}_size") * cubed_standard_deviation.to_f)
-          end
-        end
-
-        name = "#{type}_standard_deviation".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-
-            Math.sqrt(send("#{type}_variance"))
-          end
-        end
-
-        name = "#{type}_standard_error".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-
-            send("#{type}_standard_deviation") / Math.sqrt(send("#{type}_size"))
-          end
-        end
-
-        name = "#{type}_variance".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if @collection.empty?
-
-            sum_of_power(2) / send("#{type}_size").to_f
-          end
-        end
-
-        name = "#{type}_zscore".to_sym
-        define_method(name) do
-          memoize(name) do
-            return if size < 2
-            return Array.new(size, 0) if send("#{type}_standard_deviation").zero?
-
-            @collection.collect { |val| (val - mean) / send("#{type}_standard_deviation") }
-          end
-        end
-      end
-
-      alias average mean
-      alias coefficient_of_variation sample_coefficient_of_variation
-      alias kurtosis sample_kurtosis
-      alias midextreme midrange
-      alias percentile percentile_from_value
       alias percentile_rank value_from_percentile
-      alias skewness sample_skewness
-      alias size sample_size
-      alias standard_deviation sample_standard_deviation
-      alias standard_error sample_standard_error
-      alias variance sample_variance
-      alias zscore sample_zscore
 
       private
+
+      # rubocop:disable Metrics/MethodLength
+      def base_summary
+        {
+          frequencies: frequencies,
+          max: max,
+          mean: mean,
+          median: median,
+          midrange: midrange,
+          min: min,
+          mode: mode,
+          proportions: proportions,
+          quartile_1: value_from_percentile(25),
+          quartile_2: value_from_percentile(50),
+          quartile_3: value_from_percentile(75),
+          range: range,
+          size: size,
+          sum: sum
+        }
+      end
+      # rubocop:enable Metrics/MethodLength
 
       def sort
         memoize(:sort) do

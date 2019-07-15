@@ -17,6 +17,7 @@ module Enumerable
   alias skewness sample_skewness
   alias standard_deviation sample_standard_deviation
   alias standard_error sample_standard_error
+  alias summary sample_summary
   alias variance sample_variance
   alias zscore sample_zscore
 
