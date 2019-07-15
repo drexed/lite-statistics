@@ -24,6 +24,7 @@ Benchmark.ips do |x|
   x.compare!
 end
 
+# rubocop:disable Metrics/MethodLength
 def equal_summary(data)
   {
     max: data.max,
@@ -38,9 +39,10 @@ def equal_summary(data)
     size: data.size,
     sum: data.sum,
     sample_standard_deviation: data.sample_standard_deviation,
-    sample_variance: data.sample_variance,
+    sample_variance: data.sample_variance
   }
 end
+# rubocop:enable Metrics/MethodLength
 
 puts '~~~ Equal Summary Size Calculations ~~~'
 Benchmark.ips do |x|
