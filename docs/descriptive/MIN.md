@@ -13,5 +13,5 @@ Lite::Statistics::Descriptive.min(collection)
 
 # - or -
 
-# No monkey patch available
+# No monkey patch available as its part of Enumerable
 ```
