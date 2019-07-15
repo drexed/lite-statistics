@@ -100,6 +100,27 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#proportions' do
+    let(:h1) do
+      {
+        1 => 0.4,
+        2 => 0.2,
+        3 => 0.2,
+        10 => 0.2
+      }
+    end
+
+    it 'to be nil' do
+      klass = described_class.new([])
+
+      expect(klass.proportions).to eq(nil)
+    end
+
+    it 'to be { ... }' do
+      expect(klass.proportions).to eq(h1)
+    end
+  end
+
   describe '#range' do
     it 'to be nil' do
       klass = described_class.new([])

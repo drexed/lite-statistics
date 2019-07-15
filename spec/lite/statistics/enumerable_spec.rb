@@ -44,6 +44,21 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#proportions' do
+    let(:h1) do
+      {
+        1 => 0.4,
+        2 => 0.2,
+        3 => 0.2,
+        10 => 0.2
+      }
+    end
+
+    it 'to be { ... }' do
+      expect(collection.proportions).to eq(h1)
+    end
+  end
+
   describe '#range' do
     it 'to be 9' do
       expect(collection.range).to eq(9)

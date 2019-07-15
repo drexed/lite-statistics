@@ -46,6 +46,7 @@ end
 * [Frequencies](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/FREQUENCIES.md)
 * [Min](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MIN.md)
 * [Max](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MAX.md)
+* [Proportions](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/PROPORTIONS.md)
 
 #### Central tendency
 

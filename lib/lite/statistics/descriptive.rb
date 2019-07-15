@@ -5,11 +5,12 @@ module Lite
     class Descriptive < Lite::Statistics::Base
 
       CALCULATIONS ||= %i[
-        frequencies max mean median min mode percentile_from_value population_coefficient_of_variation
-        population_kurtosis population_skewness population_standard_deviation
-        population_standard_error population_variance population_zscore range
-        sample_coefficient_of_variation sample_kurtosis sample_skewness sample_standard_deviation
-        sample_standard_error sample_variance sample_zscore value_from_percentile
+        frequencies max mean median min mode proportions range percentile_from_value
+        population_coefficient_of_variation population_kurtosis population_skewness
+        population_standard_deviation population_standard_error
+        population_variance population_zscore sample_coefficient_of_variation
+        sample_kurtosis sample_skewness sample_standard_deviation sample_standard_error
+        sample_variance sample_zscore value_from_percentile
       ].freeze
 
       def initialize(collection)
@@ -82,6 +83,14 @@ module Lite
           return if top_two.first.last == top_two.last.last
 
           top_two.first.first
+        end
+      end
+
+      def proportions
+        memoize(:frequencies) do
+          return if @collection.empty?
+
+          frequencies.each_with_object({}) { |(key, val), hash| hash[key] = val / size.to_f }
         end
       end
 
