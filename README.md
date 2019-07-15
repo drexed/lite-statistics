@@ -43,7 +43,7 @@ end
 
 #### Distribution
 
-* [Frequency](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/FREQUENCY.md)
+* [Frequencies](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/FREQUENCIES.md)
 * [Min](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MIN.md)
 * [Max](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/MAX.md)
 

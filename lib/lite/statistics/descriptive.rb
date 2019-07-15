@@ -5,7 +5,7 @@ module Lite
     class Descriptive < Lite::Statistics::Base
 
       CALCULATIONS ||= %i[
-        frequency max mean median min mode percentile_from_value population_coefficient_of_variation
+        frequencies max mean median min mode percentile_from_value population_coefficient_of_variation
         population_kurtosis population_skewness population_standard_deviation
         population_standard_error population_variance population_zscore range
         sample_coefficient_of_variation sample_kurtosis sample_skewness sample_standard_deviation
@@ -27,8 +27,8 @@ module Lite
 
       end
 
-      def frequency
-        memoize(:frequency) do
+      def frequencies
+        memoize(:frequencies) do
           return if @collection.empty?
 
           @collection.each_with_object(Hash.new(0)) { |val, hash| hash[val] += 1 }
@@ -78,7 +78,7 @@ module Lite
         memoize(:mode) do
           return if @collection.empty?
 
-          top_two = frequency.sort_by { |_, val| -val }.take(2)
+          top_two = frequencies.sort_by { |_, val| -val }.take(2)
           return if top_two.first.last == top_two.last.last
 
           top_two.first.first

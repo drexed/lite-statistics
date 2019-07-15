@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Enumerable do
   let(:collection) { [1, 1, 2, 3, 10] }
 
-  describe '#frequency' do
+  describe '#frequencies' do
     let(:h1) do
       {
         1 => 2,
@@ -16,7 +16,7 @@ RSpec.describe Enumerable do
     end
 
     it 'to be { ... }' do
-      expect(collection.frequency).to eq(h1)
+      expect(collection.frequencies).to eq(h1)
     end
   end
 

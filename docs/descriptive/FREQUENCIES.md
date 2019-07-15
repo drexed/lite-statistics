@@ -1,4 +1,4 @@
-# Frequency
+# Frequencies
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
@@ -10,13 +10,13 @@ results = {
 }
 
 klass = Lite::Statistics::Descriptive.new(collection)
-klass.frequency
+klass.frequencies
 
 # - or -
 
-Lite::Statistics::Descriptive.frequency(collection)
+Lite::Statistics::Descriptive.frequencies(collection)
 
 # - or -
 
-collection.frequency
+collection.frequencies
 ```

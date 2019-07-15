@@ -6,7 +6,7 @@ RSpec.describe Lite::Statistics::Descriptive do
   let(:collection) { [1, 1, 2, 3, 10] }
   let(:klass) { described_class.new(collection) }
 
-  describe '#frequency' do
+  describe '#frequencies' do
     let(:h1) do
       {
         1 => 2,
@@ -19,11 +19,11 @@ RSpec.describe Lite::Statistics::Descriptive do
     it 'to be nil' do
       klass = described_class.new([])
 
-      expect(klass.frequency).to eq(nil)
+      expect(klass.frequencies).to eq(nil)
     end
 
     it 'to be { ... }' do
-      expect(klass.frequency).to eq(h1)
+      expect(klass.frequencies).to eq(h1)
     end
   end
 
@@ -89,7 +89,7 @@ RSpec.describe Lite::Statistics::Descriptive do
       expect(klass.mode).to eq(nil)
     end
 
-    it 'to be nil when equal frequency' do
+    it 'to be nil when equal frequencies' do
       klass = described_class.new([1, 2, 3])
 
       expect(klass.mode).to eq(nil)
