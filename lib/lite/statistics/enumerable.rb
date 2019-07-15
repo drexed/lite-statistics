@@ -14,7 +14,6 @@ module Enumerable
   alias percentile percentile_from_value
   alias percentile_rank value_from_percentile
   alias skewness sample_skewness
-  alias size sample_size
   alias standard_deviation sample_standard_deviation
   alias standard_error sample_standard_error
   alias variance sample_variance
