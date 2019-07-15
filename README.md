@@ -43,9 +43,10 @@ end
 
 #### Count
 
+* [Product](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/PRODUCT.md)
+* [Sum](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUM.md)
 * [Sample Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SAMPLE_SIZE.md) aka Size
 * [Population Size](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/POPULATION_SIZE.md)
-* [Sum](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/SUM.md)
 
 #### Distribution
 

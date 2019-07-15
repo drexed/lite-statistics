@@ -100,8 +100,16 @@ module Lite
         end
       end
 
+      def product
+        memoize(:product) do
+          return 0 if @collection.empty?
+
+          @collection.inject(1) { |acc, val| acc * val }
+        end
+      end
+
       def proportions
-        memoize(:frequencies) do
+        memoize(:proportions) do
           return if @collection.empty?
 
           frequencies.each_with_object({}) { |(key, val), hash| hash[key] = val / size.to_f }

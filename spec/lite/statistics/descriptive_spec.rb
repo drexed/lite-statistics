@@ -114,6 +114,20 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
+  describe '#product' do
+    let(:n1) { 10 }
+
+    it 'to be 0' do
+      klass = described_class.new([])
+
+      expect(klass.product).to eq(0)
+    end
+
+    it 'to be 60' do
+      expect(klass.product).to eq(60)
+    end
+  end
+
   describe '#proportions' do
     let(:h1) do
       {

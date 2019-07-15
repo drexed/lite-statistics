@@ -57,6 +57,12 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#product' do
+    it 'to be 60' do
+      expect(collection.product).to eq(60)
+    end
+  end
+
   describe '#proportions' do
     let(:h1) do
       {
@@ -150,7 +156,7 @@ RSpec.describe Enumerable do
   end
 
   describe '#sample_coefficient_of_variation' do
-    let(:n1) { 0.994796148546339}
+    let(:n1) { 0.994796148546339 }
 
     it 'to be 0.994796148546339 for sample_coefficient_of_variation' do
       expect(collection.sample_coefficient_of_variation).to eq(n1)
