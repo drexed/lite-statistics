@@ -4,19 +4,16 @@ module Lite
   module Statistics
     class Base
 
-      attr_accessor :collection
+      private
 
-      def initialize(collection)
-        @collection = collection
+      def cache
+        @cache ||= {}
       end
 
-      class << self
+      def memoize(key, &block)
+        return cache[key] if cache.key?(key)
 
-        def calculate(collection, *args)
-          klass = new(collection)
-          klass.calculate(*args)
-        end
-
+        cache[key] ||= yield(block)
       end
 
     end

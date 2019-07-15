@@ -5,6 +5,9 @@
 
 Lite::Statistics is a library for generate statistics from collections of data points.
 
+This library is built for performance as all calculated value are memoized so that the can
+be used in later calculations instead of being reran again.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,11 +27,7 @@ Or install it yourself as:
 ## Table of Contents
 
 * [Configurations](#configurations)
-* [Distribution](#distribution)
-* [Central tendency](#central-tendency)
-* [Dispersion](#dispersion)
-* [Spread](#spread)
-* [Shape](#shape)
+* [Descriptive](#descriptive)
 * [Monkey patches](#monkey-patches)
 
 ## Configurations
@@ -42,41 +41,43 @@ Lite::Statistics.configure do |config|
 end
 ```
 
-## Distribution
+## Descriptive
 
-* [Frequency](https://github.com/drexed/lite-ruby/blob/master/docs/FREQUENCY.md)
+#### Distribution
 
-## Central tendency
+* [Frequency](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/FREQUENCY.md)
 
-* [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/MEAN.md) aka Average
-* [Median](https://github.com/drexed/lite-ruby/blob/master/docs/MEDIAN.md)
-* [Mode](https://github.com/drexed/lite-ruby/blob/master/docs/MODE.md)
+#### Central tendency
 
-## Dispersion
+* [Mean](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/MEAN.md) aka Average
+* [Median](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/MEDIAN.md)
+* [Mode](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/MODE.md)
 
-* [Range](https://github.com/drexed/lite-ruby/blob/master/docs/RANGE.md)
-* [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/PERCENTILE_FROM_VALUE.md) aka Percentile
-* [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/VALUE_FROM_PERCENTILE.md) aka Percentile Rank
+#### Dispersion
 
-## Spread
+* [Range](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/RANGE.md)
+* [Percentile from Value](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/PERCENTILE_FROM_VALUE.md) aka Percentile
+* [Value from Percentile](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/VALUE_FROM_PERCENTILE.md) aka Percentile Rank
 
-* [Sample Variance](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_VARIANCE.md) aka Variance
-* [Sample Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
-* [Sample Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_COEFFICIENT_OF_VARIATION.md) aka Coefficient of Variation
-* [Sample Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_STANDARD_ERROR.md) aka Standard Error
-* [Sample Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_ZSCORE.md) aka Z-Score
-* [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_VARIANCE.md)
-* [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_DEVIATION.md)
-* [Population Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_COEFFICIENT_OF_VARIATION.md)
-* [Population Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_STANDARD_ERROR.md)
-* [Population Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_ZSCORE.md)
+#### Spread
 
-## Shape
+* [Sample Variance](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_VARIANCE.md) aka Variance
+* [Sample Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_STANDARD_DEVIATION.md) aka Standard Deviation
+* [Sample Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_COEFFICIENT_OF_VARIATION.md) aka Coefficient of Variation
+* [Sample Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_STANDARD_ERROR.md) aka Standard Error
+* [Sample Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_ZSCORE.md) aka Z-Score
+* [Population Variance](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_VARIANCE.md)
+* [Population Standard Deviation](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_STANDARD_DEVIATION.md)
+* [Population Coefficient of Variation](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_COEFFICIENT_OF_VARIATION.md)
+* [Population Standard Error](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_STANDARD_ERROR.md)
+* [Population Z-Score](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_ZSCORE.md)
 
-* [Sample Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_SKEWNESS.md) aka Skewness
-* [Sample Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/SAMPLE_KURTOSIS.md) aka Kurtosis
-* [Population Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_SKEWNESS.md)
-* [Population Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/POPULATION_KURTOSIS.md)
+#### Shape
+
+* [Sample Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_SKEWNESS.md) aka Skewness
+* [Sample Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/SAMPLE_KURTOSIS.md) aka Kurtosis
+* [Population Skewness](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_SKEWNESS.md)
+* [Population Kurtosis](https://github.com/drexed/lite-ruby/blob/master/docs/descriptive/POPULATION_KURTOSIS.md)
 
 ## Monkey patches
 
