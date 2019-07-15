@@ -1,5 +1,7 @@
 # Sample Size
 
+Alias: `size`
+
 ```ruby
 collection = [1, 1, 2, 3, 10]
 results = 5

@@ -5,7 +5,7 @@ module Lite
     class Descriptive < Lite::Statistics::Base
 
       CALCULATIONS ||= %i[
-        frequencies max mean median min mode proportions percentile_from_value
+        frequencies max mean median midrange min mode proportions percentile_from_value
         population_coefficient_of_variation population_kurtosis population_size population_skewness
         population_standard_deviation population_standard_error range population_variance
         population_zscore sample_coefficient_of_variation sample_kurtosis sample_size
@@ -100,11 +100,11 @@ module Lite
         end
       end
 
-      def product
-        memoize(:product) do
-          return 0 if @collection.empty?
+      def midrange
+        memoize(:midrange) do
+          return if @collection.empty?
 
-          @collection.inject(1) { |acc, val| acc * val }
+          [min, max].sum / 2.0
         end
       end
 
@@ -218,6 +218,7 @@ module Lite
       alias average mean
       alias coefficient_of_variation sample_coefficient_of_variation
       alias kurtosis sample_kurtosis
+      alias midextreme midrange
       alias percentile percentile_from_value
       alias percentile_rank value_from_percentile
       alias skewness sample_skewness

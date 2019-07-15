@@ -38,6 +38,18 @@ RSpec.describe Enumerable do
     end
   end
 
+  describe '#midrange' do
+    let(:n1) { 5.5 }
+
+    it 'to be 5.5 for midrange' do
+      expect(collection.midrange).to eq(n1)
+    end
+
+    it 'to be 5.5 for midextreme' do
+      expect(collection.midextreme).to eq(n1)
+    end
+  end
+
   describe '#mode' do
     it 'to be 1' do
       expect(collection.mode).to eq(1)
@@ -54,12 +66,6 @@ RSpec.describe Enumerable do
 
     it 'to be 80 percentile' do
       expect(collection.percentile(n1)).to eq(n2)
-    end
-  end
-
-  describe '#product' do
-    it 'to be 60' do
-      expect(collection.product).to eq(60)
     end
   end
 

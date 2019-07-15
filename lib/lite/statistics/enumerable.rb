@@ -11,6 +11,7 @@ module Enumerable
   alias average mean
   alias coefficient_of_variation sample_coefficient_of_variation
   alias kurtosis sample_kurtosis
+  alias midextreme midrange
   alias percentile percentile_from_value
   alias percentile_rank value_from_percentile
   alias skewness sample_skewness
