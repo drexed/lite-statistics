@@ -26,7 +26,7 @@ Or install it yourself as:
 * [Configurations](#configurations)
 * [Descriptive](#descriptive)
 * [Monkey patches](#monkey-patches)
-* [Performance](#performance)
+* [Benchmarks](#benchmarks)
 
 ## Configurations
 
@@ -95,10 +95,56 @@ Including monkey patches will give you `Enumerable` access to statistics.
 [1, 2, 3, 1].mode #=> 1
 ```
 
-## Performance
+## Benchmarks
 
-This library is built for performance as all calculated value are memoized so that the can
-be used in later calculations instead of being reran again.
+All benchmarks are ran using the summary of calculations as this will test against all calculations.
+
+You can execute all benchmarks locally using the following command:
+
+```ruby
+# From the project folder:
+ruby benchmarks/descriptive_statistics.rb
+```
+
+#### vs Descriptive Statistics
+
+Repo: [Github](https://github.com/thirtysixthspan/descriptive_statistics)
+
+```ruby
+# lite-statistics        => 22 calculations
+# descriptive_statistics => 13 calculations
+
+Warming up --------------------------------------
+     lite-statistics     1.000  i/100ms
+descriptive_statistics
+                         1.000  i/100ms
+Calculating -------------------------------------
+     lite-statistics      1.191  (± 0.0%) i/s -      6.000  in   5.049012s
+descriptive_statistics
+                          0.560  (± 0.0%) i/s -      3.000  in   5.357009s
+
+Comparison:
+     lite-statistics:        1.2 i/s
+descriptive_statistics:        0.6 i/s - 2.13x  slower
+```
+
+```ruby
+# lite-statistics        => 13 calculations
+# descriptive_statistics => 13 calculations
+
+Warming up --------------------------------------
+     lite-statistics     1.000  i/100ms
+descriptive_statistics
+                         1.000  i/100ms
+Calculating -------------------------------------
+     lite-statistics      2.820  (± 0.0%) i/s -     15.000  in   5.328247s
+descriptive_statistics
+                          0.537  (± 0.0%) i/s -      3.000  in   5.589307s
+
+Comparison:
+     lite-statistics:        2.8 i/s
+descriptive_statistics:        0.5 i/s - 5.25x  slower
+```
 
 ## Development
 
