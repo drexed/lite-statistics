@@ -122,8 +122,8 @@ RSpec.describe Enumerable do
   end
 
   describe '#population_standard_error' do
-    it 'to be 1.6911534525287761' do
-      expect(collection.population_standard_error).to eq(1.6911534525287761)
+    it 'to be 1.8907670401189036' do
+      expect(collection.population_standard_error).to eq(1.8907670401189036)
     end
   end
 

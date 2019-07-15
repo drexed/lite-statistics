@@ -183,7 +183,7 @@ module Lite
           memoize(name) do
             return if @collection.empty?
 
-            send("#{type}_standard_deviation") / Math.sqrt(size)
+            send("#{type}_standard_deviation") / Math.sqrt(send("#{type}_size"))
           end
         end
 
