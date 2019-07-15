@@ -1,17 +1,19 @@
 # Sample Variance
 
+Alias: `variance`
+
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 14.299999999999999
 
-klass = Lite::Statistics::SampleVariance.new(collection)
-klass = klass.calculate                                #=> 14.299999999999999
-
-# - or -
-
-Lite::Statistics::SampleVariance.calculate(collection) #=> 14.299999999999999
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.sample_variance
 
 # - or -
 
-collection.sample_variance                             #=> 14.299999999999999
-collection.variance                                    #=> 14.299999999999999
+Lite::Statistics::Descriptive.sample_variance(collection)
+
+# - or -
+
+collection.sample_variance
 ```

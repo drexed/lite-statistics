@@ -3,14 +3,25 @@
 require 'spec_helper'
 
 RSpec.describe Lite::Statistics::Base do
-  let(:collection) { [1, 2, 3] }
-  let(:klass) { described_class.new(collection) }
+  let(:klass) { described_class.new }
 
-  describe '#calculate' do
-    it 'to be 2.0 when calculated using class method' do
-      results = Lite::Statistics::Mean.calculate(collection)
+  describe '#cache' do
+    it 'to be {}' do
+      expect(klass.send(:cache)).to eq({})
+    end
+  end
 
-      expect(results).to eq(2.0)
+  describe '#memoize' do
+    it 'to be {}' do
+      random_one = rand(1..1_000_000)
+      klass.send(:memoize, :test) { random_one }
+
+      random_two = rand(1..1_000_000)
+      klass.send(:memoize, :test) { random_two }
+
+      cache = klass.send(:cache)
+
+      expect(cache[:test]).to eq(random_one)
     end
   end
 

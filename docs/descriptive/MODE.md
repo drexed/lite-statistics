@@ -2,15 +2,16 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 1
 
-klass = Lite::Statistics::Mode.new(collection)
-klass = klass.calculate                      #=> 1
-
-# - or -
-
-Lite::Statistics::Mode.calculate(collection) #=> 1
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.mode
 
 # - or -
 
-collection.mode                              #=> 1
+Lite::Statistics::Descriptive.mode(collection)
+
+# - or -
+
+collection.mode
 ```

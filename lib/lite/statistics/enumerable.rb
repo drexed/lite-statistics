@@ -3,33 +3,10 @@
 module Enumerable
 
   # Make this work
-  [
-    :frequency,
-    :mean,
-    :median,
-    :mode,
-    :percentile_from_value,
-    :population_coefficient_of_variation,
-    :population_kurtosis,
-    :population_skewness,
-    :population_standard_deviation,
-    :population_standard_error,
-    :population_variance,
-    :population_zscore,
-    :range,
-    :sample_coefficient_of_variation,
-    :sample_kurtosis,
-    :sample_skewness,
-    :sample_standard_deviation,
-    :sample_standard_error,
-    :sample_variance,
-    :sample_zscore,
-    :value_from_percentile
-  ].each do |name|
+  Lite::Statistics::Descriptive::CALCULATIONS.each do |name|
     define_method(name) { |*args| Lite::Statistics::Descriptive.send(name, self, *args) }
   end
 
-  # TODO: try and move this into a helper file
   alias average mean
   alias coefficient_of_variation sample_coefficient_of_variation
   alias kurtosis sample_kurtosis

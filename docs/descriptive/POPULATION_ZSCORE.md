@@ -10,15 +10,14 @@ results = [
   1.9513309067639724
 ]
 
-klass = Lite::Statistics::PopulationZscore.new(collection)
-klass = klass.calculate                                  #=> results
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.population_zscore
 
 # - or -
 
-Lite::Statistics::PopulationZscore.calculate(collection) #=> results
+Lite::Statistics::Descriptive.population_zscore(collection)
 
 # - or -
 
-collection.population_zscore                             #=> results
-collection.zscore                                        #=> results
+collection.population_zscore
 ```

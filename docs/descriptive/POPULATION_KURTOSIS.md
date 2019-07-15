@@ -2,15 +2,16 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 3.75877182258301
 
-klass = Lite::Statistics::PopulationKurtosis.new(collection)
-klass = klass.calculate                                    #=> 3.75877182258301
-
-# - or -
-
-Lite::Statistics::PopulationKurtosis.calculate(collection) #=> 3.75877182258301
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.population_kurtosis
 
 # - or -
 
-collection.population_kurtosis                             #=> 3.75877182258301
+Lite::Statistics::Descriptive.population_kurtosis(collection)
+
+# - or -
+
+collection.population_kurtosis
 ```

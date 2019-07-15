@@ -1,17 +1,19 @@
 # Sample Standard Deviation
 
+Alias: `standard_deviation`
+
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 3.7815340802378072
 
-klass = Lite::Statistics::SampleStandardDeviation.new(collection)
-klass = klass.calculate                                         #=> 3.7815340802378072
-
-# - or -
-
-Lite::Statistics::SampleStandardDeviation.calculate(collection) #=> 3.7815340802378072
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.sample_standard_deviation
 
 # - or -
 
-collection.sample_standard_deviation                            #=> 3.7815340802378072
-collection.standard_deviation                                   #=> 3.7815340802378072
+Lite::Statistics::Descriptive.sample_standard_deviation(collection)
+
+# - or -
+
+collection.sample_standard_deviation
 ```

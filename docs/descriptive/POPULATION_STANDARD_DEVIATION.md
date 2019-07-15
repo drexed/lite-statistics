@@ -2,15 +2,16 @@
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 3.3823069050575527
 
-klass = Lite::Statistics::PopulationStandardDeviation.new(collection)
-klass = klass.calculate                                             #=> 3.3823069050575527
-
-# - or -
-
-Lite::Statistics::PopulationStandardDeviation.calculate(collection) #=> 3.3823069050575527
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.population_standard_deviation
 
 # - or -
 
-collection.population_standard_deviation                            #=> 3.3823069050575527
+Lite::Statistics::Descriptive.population_standard_deviation(collection)
+
+# - or -
+
+collection.population_standard_deviation
 ```

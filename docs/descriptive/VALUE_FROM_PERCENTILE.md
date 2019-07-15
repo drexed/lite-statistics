@@ -1,17 +1,19 @@
 # Value from Percentile
 
+Alias: `percentile_rank`
+
 ```ruby
 collection = [1, 1, 2, 3, 10]
+results = 3
 
-klass = Lite::Statistics::ValueFromPercentile.new(collection)
-klass = klass.calculate(60)                                     #=> 3
-
-# - or -
-
-Lite::Statistics::ValueFromPercentile.calculate(collection, 60) #=> 3
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.value_from_percentile(60)
 
 # - or -
 
-collection.value_from_percentile(60)                            #=> 3
-collection.percentile_rank(60)                                  #=> 3
+Lite::Statistics::Descriptive.value_from_percentile(collection, 60)
+
+# - or -
+
+collection.value_from_percentile(60)
 ```

@@ -1,5 +1,7 @@
 # Sample Z-Score
 
+Alias: `zscore`
+
 ```ruby
 collection = [1, 1, 2, 3, 10]
 results = [
@@ -10,15 +12,14 @@ results = [
   1.7453234216482187
 ]
 
-klass = Lite::Statistics::SampleZscore.new(collection)
-klass = klass.calculate                              #=> results
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.sample_zscore
 
 # - or -
 
-Lite::Statistics::SampleZscore.calculate(collection) #=> results
+Lite::Statistics::Descriptive.sample_zscore(collection)
 
 # - or -
 
-collection.sample_zscore                             #=> results
-collection.zscore                                    #=> results
+collection.sample_zscore
 ```

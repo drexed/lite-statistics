@@ -9,14 +9,14 @@ results = {
   10 => 1
 }
 
-klass = Lite::Statistics::Frequency.new(collection)
-klass = klass.calculate                           #=> results
+klass = Lite::Statistics::Descriptive.new(collection)
+klass.frequency
 
 # - or -
 
-Lite::Statistics::Frequency.calculate(collection) #=> results
+Lite::Statistics::Descriptive.frequency(collection)
 
 # - or -
 
-collection.frequency                              #=> results
+collection.frequency
 ```
