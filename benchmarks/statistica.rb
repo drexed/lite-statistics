@@ -39,10 +39,10 @@ Benchmark.ips do |x|
   x.compare!
 end
 
-puts '~~~ Default Summary Calculations ~~~'
+puts '~~~ Full Summary Calculations ~~~'
 puts
 
-def default_summary(data)
+def full_summary(data)
   baseline_summary(data).merge(
     geometric_mean: data.get_geo_mean,
     harmonic_mean: data.get_harm_mean,
@@ -55,7 +55,7 @@ end
 
 Benchmark.ips do |x|
   x.report('LS => 19 calcs') do
-    default_summary(collection)
+    full_summary(collection)
   end
 
   x.compare!

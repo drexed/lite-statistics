@@ -8,9 +8,9 @@ require 'descriptive_statistics/safe'
 collection = []
 1_000_000.times { collection << rand(1..99) }
 
-# NOTE: Baseline and Default summaries are the same in this library
+# NOTE: Baseline and Full summaries are the same in this library
 
-puts '~~~ Baseline/Default Summary Calculations ~~~'
+puts '~~~ Baseline/Full Summary Calculations ~~~'
 puts
 
 Benchmark.ips do |x|

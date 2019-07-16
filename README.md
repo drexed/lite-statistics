@@ -98,7 +98,7 @@ Including monkey patches will give you `Enumerable` access to statistics.
 ## Benchmarks
 
 All benchmarks are executed using the baseline summary (exact same calculations for each)
-and the default summary (all available calculations for each). Each is generated
+and the full summary (all available calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
 View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
@@ -112,7 +112,7 @@ Library | # of Calculations | IPS | Speed
 [descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 13 | 0.607 i/s | 5.37x  slower
 [statistica](https://github.com/tab300/Statistica) | 13 | 0.576 i/s | 5.96x  slower
 
-#### Default summaries
+#### Full summaries
 
 Library | # of Calculations | IPS | Speed
 --- | --- | --- | ---

@@ -40,10 +40,10 @@ Benchmark.ips do |x|
   x.compare!
 end
 
-puts '~~~ Default Summary Calculations ~~~'
+puts '~~~ Full Summary Calculations ~~~'
 puts
 
-def default_summary(data)
+def full_summary(data)
   baseline_summary(data).merge(
     relative_standard_deviation: data.relative_standard_deviation,
     skewness: data.skewness,
@@ -54,7 +54,7 @@ end
 Benchmark.ips do |x|
   x.report('LS => 15 calcs') do
     data = DescriptiveStatistics::Stats.new(collection)
-    default_summary(data)
+    full_summary(data)
   end
 
   x.compare!

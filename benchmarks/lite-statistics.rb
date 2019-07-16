@@ -40,7 +40,7 @@ Benchmark.ips do |x|
   x.compare!
 end
 
-puts '~~~ Default Summary Calculations ~~~'
+puts '~~~ Full Summary Calculations ~~~'
 puts
 Benchmark.ips do |x|
   x.report('LS => 22 calcs') do
