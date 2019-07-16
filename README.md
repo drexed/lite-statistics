@@ -97,7 +97,7 @@ Including monkey patches will give you `Enumerable` access to statistics.
 
 ## Benchmarks
 
-All benchmarks are ran using the default summary (all available calculations for each)
+All benchmarks are executed using the default summary (all available calculations for each)
 and adjusted the adjusted summary (exact same calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
