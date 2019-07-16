@@ -101,6 +101,8 @@ All benchmarks are ran using the default summary (all available calculations for
 and adjusted the adjusted summary (exact same calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
+View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
+
 #### Default summaries
 
 Library | # of Calculations | IPS | Speed
@@ -114,17 +116,6 @@ Library | # of Calculations | IPS | Speed
 --- | --- | --- | ---
 [Lite::Statistics](https://github.com/drexed/lite-statistics) | 13 | 2.8 i/s | ---
 [Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.5 i/s | 5.25x  slower
-
-#### Benchmarks
-
-View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
-
-```ruby
-# From the project folder, you can execute all
-# benchmarks locally using the following command:
-
-ruby benchmarks/descriptive_statistics.rb
-```
 
 ## Development
 
