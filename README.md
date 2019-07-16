@@ -97,25 +97,29 @@ Including monkey patches will give you `Enumerable` access to statistics.
 
 ## Benchmarks
 
-All benchmarks are executed using the default summary (all available calculations for each)
-and adjusted the adjusted summary (exact same calculations for each). Each is generated
+All benchmarks are executed using the baseline summary (exact same calculations for each)
+and the default summary (all available calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
 View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
+
+#### Baseline summaries
+
+Library | # of Calculations | IPS | Speed
+--- | --- | --- | ---
+[lite-statistics](https://github.com/drexed/lite-statistics) | 13 | 2.972 i/s | ---
+[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.619 i/s | 5.25x  slower
+[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 13 | 0.607 i/s | 5.37x  slower
+[statistica](https://github.com/tab300/Statistica) | 13 | 0.576 i/s | 5.96x  slower
 
 #### Default summaries
 
 Library | # of Calculations | IPS | Speed
 --- | --- | --- | ---
-[Lite::Statistics](https://github.com/drexed/lite-statistics) | 22 | 1.2 i/s | ---
-[Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.6 i/s | 2.13x  slower
-
-#### Adjusted summaries
-
-Library | # of Calculations | IPS | Speed
---- | --- | --- | ---
-[Lite::Statistics](https://github.com/drexed/lite-statistics) | 13 | 2.8 i/s | ---
-[Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.5 i/s | 5.25x  slower
+[lite-statistics](https://github.com/drexed/lite-statistics) | 22 | 1.241 i/s | ---
+[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.619 i/s | 2.13x  slower
+[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 15 | 0.549 i/s | 2.21x  slower
+[statistica](https://github.com/tab300/Statistica) | 19 | 0.456 i/s | 3.12x  slower
 
 ## Development
 
