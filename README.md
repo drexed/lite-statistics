@@ -98,10 +98,8 @@ Including monkey patches will give you `Enumerable` access to statistics.
 ## Benchmarks
 
 All benchmarks are ran using the default summary (all available calculations for each)
-and adjusted the adjusted summary (exact same calculations for each).
-
-All benchmarks are generated using an array containing 1 million random integers on the
-`2.6.3` Ruby version.
+and adjusted the adjusted summary (exact same calculations for each). Each is generated
+using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
 #### Default summaries
 
@@ -117,9 +115,9 @@ Library | # of Calculations | IPS | Speed
 [Lite::Statistics](https://github.com/drexed/lite-statistics) | 13 | 2.8 i/s | ---
 [Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.5 i/s | 5.25x  slower
 
-#### Local benchmarks
+#### Benchmarks
 
-View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks)
+View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
 
 ```ruby
 # From the project folder, you can execute all

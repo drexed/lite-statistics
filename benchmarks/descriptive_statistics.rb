@@ -9,7 +9,7 @@ require 'descriptive_statistics/safe'
 collection = []
 1_000_000.times { collection << rand(1..99) }
 
-# NOTE: Approx. 2.13x faster
+# NOTE: Approx. 2.14x faster
 # LS executes an additional 9 calculations
 
 puts '~~~ Default Summary Size Calculations ~~~'
