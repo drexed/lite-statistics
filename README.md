@@ -97,53 +97,35 @@ Including monkey patches will give you `Enumerable` access to statistics.
 
 ## Benchmarks
 
-All benchmarks are ran using the summary of calculations as this will test against all calculations.
+All benchmarks are ran using the default summary (all available calculations for each)
+and adjusted the adjusted summary (exact same calculations for each).
 
-You can execute all benchmarks locally using the following command:
+All benchmarks are generated using an array containing 1 million random integers on the
+`2.6.3` Ruby version.
+
+#### Default summaries
+
+Library | # of Calculations | IPS | Speed
+--- | --- | --- | ---
+[Lite::Statistics](https://github.com/drexed/lite-statistics) | 22 | 1.2 i/s | ---
+[Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.6 i/s | 2.13x  slower
+
+#### Adjusted summaries
+
+Library | # of Calculations | IPS | Speed
+--- | --- | --- | ---
+[Lite::Statistics](https://github.com/drexed/lite-statistics) | 13 | 2.8 i/s | ---
+[Descriptive Statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.5 i/s | 5.25x  slower
+
+#### Local benchmarks
+
+View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks)
 
 ```ruby
-# From the project folder:
+# From the project folder, you can execute all
+# benchmarks locally using the following command:
+
 ruby benchmarks/descriptive_statistics.rb
-```
-
-#### vs Descriptive Statistics
-
-Repo: [Github](https://github.com/thirtysixthspan/descriptive_statistics)
-
-```ruby
-# lite-statistics        => 22 calculations
-# descriptive_statistics => 13 calculations
-
-Warming up --------------------------------------
-     lite-statistics     1.000  i/100ms
-descriptive_statistics
-                         1.000  i/100ms
-Calculating -------------------------------------
-     lite-statistics      1.191  (± 0.0%) i/s -      6.000  in   5.049012s
-descriptive_statistics
-                          0.560  (± 0.0%) i/s -      3.000  in   5.357009s
-
-Comparison:
-     lite-statistics:        1.2 i/s
-descriptive_statistics:        0.6 i/s - 2.13x  slower
-```
-
-```ruby
-# lite-statistics        => 13 calculations
-# descriptive_statistics => 13 calculations
-
-Warming up --------------------------------------
-     lite-statistics     1.000  i/100ms
-descriptive_statistics
-                         1.000  i/100ms
-Calculating -------------------------------------
-     lite-statistics      2.820  (± 0.0%) i/s -     15.000  in   5.328247s
-descriptive_statistics
-                          0.537  (± 0.0%) i/s -      3.000  in   5.589307s
-
-Comparison:
-     lite-statistics:        2.8 i/s
-descriptive_statistics:        0.5 i/s - 5.25x  slower
 ```
 
 ## Development

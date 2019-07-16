@@ -9,14 +9,18 @@ require 'descriptive_statistics/safe'
 collection = []
 1_000_000.times { collection << rand(1..99) }
 
+# NOTE: Approx. 2.13x faster
+# LS executes an additional 9 calculations
+
 puts '~~~ Default Summary Size Calculations ~~~'
+puts
 Benchmark.ips do |x|
-  x.report('lite-statistics') do
+  x.report('LS => 22 calcs)') do
     data = Lite::Statistics::Descriptive.new(collection)
     data.sample_summary
   end
 
-  x.report('descriptive_statistics') do
+  x.report('DS => 13 calcs') do
     data = DescriptiveStatistics::Stats.new(collection)
     data.descriptive_statistics
   end
@@ -44,14 +48,18 @@ def equal_summary(data)
 end
 # rubocop:enable Metrics/MethodLength
 
+# NOTE: Approx. 5.25x faster
+# Executes same exact caculations for both libraries
+
 puts '~~~ Equal Summary Size Calculations ~~~'
+puts
 Benchmark.ips do |x|
-  x.report('lite-statistics') do
+  x.report('LS => 13 calcs') do
     data = Lite::Statistics::Descriptive.new(collection)
     equal_summary(data)
   end
 
-  x.report('descriptive_statistics') do
+  x.report('DS => 13 calcs') do
     data = DescriptiveStatistics::Stats.new(collection)
     data.descriptive_statistics
   end
