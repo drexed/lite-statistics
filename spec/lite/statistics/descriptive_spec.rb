@@ -275,7 +275,7 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#population_zscore' do
+  describe '#population_zscores' do
     let(:h1) do
       {
         1 => -0.6346630624175341,
@@ -288,17 +288,17 @@ RSpec.describe Lite::Statistics::Descriptive do
     it 'to be nil' do
       klass = described_class.new([])
 
-      expect(klass.population_zscore).to eq(nil)
+      expect(klass.population_zscores).to eq(nil)
     end
 
     it 'to be {}' do
       allow(klass).to receive(:population_standard_deviation).and_return(0)
 
-      expect(klass.population_zscore).to eq({})
+      expect(klass.population_zscores).to eq({})
     end
 
     it 'to be { ... }' do
-      expect(klass.population_zscore).to eq(h1)
+      expect(klass.population_zscores).to eq(h1)
     end
   end
 
@@ -392,7 +392,7 @@ RSpec.describe Lite::Statistics::Descriptive do
     end
   end
 
-  describe '#sample_zscore' do
+  describe '#sample_zscores' do
     let(:h1) do
       {
         1 => -0.7095748751868991,
@@ -405,17 +405,17 @@ RSpec.describe Lite::Statistics::Descriptive do
     it 'to be nil' do
       klass = described_class.new([])
 
-      expect(klass.sample_zscore).to eq(nil)
+      expect(klass.sample_zscores).to eq(nil)
     end
 
     it 'to be {}' do
       allow(klass).to receive(:sample_standard_deviation).and_return(0)
 
-      expect(klass.sample_zscore).to eq({})
+      expect(klass.sample_zscores).to eq({})
     end
 
     it 'to be { ... }' do
-      expect(klass.sample_zscore).to eq(h1)
+      expect(klass.sample_zscores).to eq(h1)
     end
   end
 

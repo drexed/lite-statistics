@@ -10,9 +10,9 @@ module Lite
         frequencies max mean median midrange min mode proportions percentile_from_value
         population_coefficient_of_variation population_kurtosis population_size population_skewness
         population_standard_deviation population_standard_error population_summary
-        population_variance population_zscore range sample_coefficient_of_variation sample_kurtosis
+        population_variance population_zscores range sample_coefficient_of_variation sample_kurtosis
         sample_size sample_skewness sample_standard_deviation sample_standard_error sample_summary
-        sample_variance sample_zscore sum value_from_percentile
+        sample_variance sample_zscores sum value_from_percentile
       ].freeze
 
       def initialize(collection)
@@ -157,7 +157,7 @@ module Lite
           population_standard_deviation: population_standard_deviation,
           population_standard_error: population_standard_error,
           population_variance: population_variance,
-          population_zscore: population_zscore
+          population_zscores: population_zscores
         )
       end
 
@@ -169,7 +169,7 @@ module Lite
 
       memoize :population_variance
 
-      def population_zscore
+      def population_zscores
         return if size < 2
         return Hash.new(0) if population_standard_deviation.zero?
 
@@ -178,7 +178,7 @@ module Lite
         end
       end
 
-      memoize :population_zscore
+      memoize :population_zscores
 
       def midrange
         return if @collection.empty?
@@ -270,7 +270,7 @@ module Lite
           sample_standard_deviation: sample_standard_deviation,
           sample_standard_error: sample_standard_error,
           sample_variance: sample_variance,
-          sample_zscore: sample_zscore
+          sample_zscores: sample_zscores
         )
       end
 
@@ -285,8 +285,7 @@ module Lite
       memoize :sample_variance
       alias variance sample_variance
 
-      # TODO: rename this to zscores
-      def sample_zscore
+      def sample_zscores
         return if size < 2
         return Hash.new(0) if sample_standard_deviation.zero?
 
@@ -295,8 +294,8 @@ module Lite
         end
       end
 
-      memoize :sample_zscore
-      alias zscore sample_zscore
+      memoize :sample_zscores
+      alias zscores sample_zscores
 
       def sum
         @collection.sum

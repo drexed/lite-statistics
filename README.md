@@ -80,7 +80,7 @@ Ex: `variance` => `sample_variance`
 * [Sample|Population Standard Deviation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/STANDARD_DEVIATION.md)
 * [Sample|Population Coefficient of Variation](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/COEFFICIENT_OF_VARIATION.md)
 * [Sample|Population Standard Error](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/STANDARD_ERROR.md)
-* [Sample|Population Z-Score](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/ZSCORE.md)
+* [Sample|Population Z-Scores](https://github.com/drexed/lite-statistics/blob/master/docs/descriptive/ZSCORES.md)
 
 #### Shape
 

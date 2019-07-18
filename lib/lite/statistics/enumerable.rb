@@ -19,6 +19,6 @@ module Enumerable
   alias standard_error sample_standard_error
   alias summary sample_summary
   alias variance sample_variance
-  alias zscore sample_zscore
+  alias zscores sample_zscores
 
 end

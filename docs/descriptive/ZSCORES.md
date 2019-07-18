@@ -1,6 +1,6 @@
-# Sample|Population Z-Score
+# Sample|Population Z-Scores
 
-Alias: `zscore`
+Alias: `zscores`
 
 ```ruby
 collection = [1, 1, 2, 3, 10]
@@ -12,13 +12,13 @@ results = {
 }
 
 klass = Lite::Statistics::Descriptive.new(collection)
-klass.sample_zscore
+klass.sample_zscores
 
 # - or -
 
-Lite::Statistics::Descriptive.population_zscore(collection)
+Lite::Statistics::Descriptive.population_zscores(collection)
 
 # - or -
 
-collection.sample_zscore
+collection.sample_zscores
 ```

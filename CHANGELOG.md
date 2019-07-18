@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2019-07-18
+### Changed
+- Rename zscores to zscoress
+
 ## [1.0.1] - 2019-07-18
 ### Changed
 - Memoization to use Lite::Memoize::Alias for more speed
-- Rename zscore to zscores
 - Rework benchmarks
 
 ## [1.0.0] - 2019-07-13

@@ -151,7 +151,7 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#population_zscore' do
+  describe '#population_zscores' do
     let(:h1) do
       {
         1 => -0.6346630624175341,
@@ -162,7 +162,7 @@ RSpec.describe Enumerable do
     end
 
     it 'to be [ ... ]' do
-      expect(collection.population_zscore).to eq(h1)
+      expect(collection.population_zscores).to eq(h1)
     end
   end
 
@@ -250,7 +250,7 @@ RSpec.describe Enumerable do
     end
   end
 
-  describe '#sample_zscore' do
+  describe '#sample_zscores' do
     let(:h1) do
       {
         1 => -0.7095748751868991,
@@ -260,12 +260,12 @@ RSpec.describe Enumerable do
       }
     end
 
-    it 'to be [ ... ] for sample_zscore' do
-      expect(collection.sample_zscore).to eq(h1)
+    it 'to be [ ... ] for sample_zscores' do
+      expect(collection.sample_zscores).to eq(h1)
     end
 
-    it 'to be [ ... ] for zscore' do
-      expect(collection.zscore).to eq(h1)
+    it 'to be [ ... ] for zscores' do
+      expect(collection.zscores).to eq(h1)
     end
   end
 
