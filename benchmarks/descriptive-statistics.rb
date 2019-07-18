@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-%w[lib benchmarks].each { |name| $LOAD_PATH.unshift(name) }
-
-require 'benchmark/ips'
 require 'descriptive-statistics'
+require_relative 'base'
 
 collection = []
 1_000_000.times { collection << rand(1..99) }
@@ -32,7 +30,12 @@ end
 # rubocop:enable Metrics/MethodLength
 
 Benchmark.ips do |x|
-  x.report('LS => 13 calcs') do
+  x.report('LS.13') do
+    data = Lite::Statistics::Descriptive.new(collection)
+    ls_baseline_summary(data)
+  end
+
+  x.report('DS.13') do
     data = DescriptiveStatistics::Stats.new(collection)
     baseline_summary(data)
   end
@@ -52,7 +55,12 @@ def full_summary(data)
 end
 
 Benchmark.ips do |x|
-  x.report('LS => 15 calcs') do
+  x.report('LS.22') do
+    data = Lite::Statistics::Descriptive.new(collection)
+    data.sample_summary
+  end
+
+  x.report('DS.16') do
     data = DescriptiveStatistics::Stats.new(collection)
     full_summary(data)
   end

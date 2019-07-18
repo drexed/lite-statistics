@@ -101,25 +101,25 @@ All benchmarks are executed using the baseline summary (exact same calculations 
 and the full summary (all available calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
-View all available [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
+View all how it compares to other libs by running the [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
 
 #### Baseline summaries
 
 Library | # of Calculations | IPS | Speed
 --- | --- | --- | ---
-[lite-statistics](https://github.com/drexed/lite-statistics) | 13 | 2.972 i/s | ---
-[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.619 i/s | 5.25x  slower
-[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 13 | 0.607 i/s | 5.37x  slower
-[statistica](https://github.com/tab300/Statistica) | 13 | 0.576 i/s | 5.96x  slower
+[lite-statistics](https://github.com/drexed/lite-statistics) | 13 | 2.5 i/s | ---
+[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.6 i/s | 4.16x  slower
+[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 13 | 1.8 i/s | 1.40x  slower
+[statistica](https://github.com/tab300/Statistica) | 13 | --- | Too slow to run
 
 #### Full summaries
 
 Library | # of Calculations | IPS | Speed
 --- | --- | --- | ---
-[lite-statistics](https://github.com/drexed/lite-statistics) | 22 | 1.241 i/s | ---
-[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.619 i/s | 2.13x  slower
-[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 15 | 0.549 i/s | 2.21x  slower
-[statistica](https://github.com/tab300/Statistica) | 19 | 0.456 i/s | 3.12x  slower
+[lite-statistics](https://github.com/drexed/lite-statistics) | 22 | 1.0 i/s | ---
+[descriptive_statistics](https://github.com/thirtysixthspan/descriptive_statistics) | 13 | 0.6 i/s | 1.72x  slower
+[descriptive-statistics](https://github.com/jtescher/descriptive-statistics) | 16 | 0.9 i/s | 1.10x  slower
+[statistica](https://github.com/tab300/Statistica) | 19 | --- | Too slow to run
 
 ## Development
 

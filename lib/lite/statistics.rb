@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-%w[version configuration base descriptive].each do |filename|
+require 'lite/memoize'
+
+%w[version configuration descriptive].each do |filename|
   require "lite/statistics/#{filename}"
 end
 

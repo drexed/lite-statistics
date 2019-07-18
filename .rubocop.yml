@@ -18,6 +18,8 @@ Metrics/BlockLength:
   Enabled: false
 Metrics/ClassLength:
   Enabled: false
+Naming/FileName:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ExpandPathArguments:
