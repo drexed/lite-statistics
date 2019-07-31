@@ -101,7 +101,7 @@ All benchmarks are executed using the baseline summary (exact same calculations 
 and the full summary (all available calculations for each). Each is generated
 using an array containing 1 million random integers on the `2.6.3` Ruby version.
 
-View all how it compares to other libs by running the [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
+View how each compares to other libs by running the [benchmarks](https://github.com/drexed/lite-statistics/tree/master/benchmarks).
 
 #### Baseline summaries
 
