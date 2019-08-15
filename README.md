@@ -31,7 +31,7 @@ Or install it yourself as:
 ## Configurations
 
 `rails g lite:statistics:install` will generate the following file:
-`../config/initalizers/lite-statistics.rb`
+`../config/initalizers/lite_statistics.rb`
 
 ```ruby
 Lite::Statistics.configure do |config|
