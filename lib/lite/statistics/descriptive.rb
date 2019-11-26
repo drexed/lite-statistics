@@ -38,7 +38,7 @@ module Lite
 
       memoize :frequencies
 
-      # rubocop:disable Style/UnneededSort
+      # rubocop:disable Style/RedundantSort
       def max
         return if @collection.empty?
 
@@ -46,7 +46,7 @@ module Lite
       end
 
       memoize :max
-      # rubocop:enable Style/UnneededSort
+      # rubocop:enable Style/RedundantSort
 
       def mean
         return if @collection.empty?
@@ -68,7 +68,7 @@ module Lite
       memoize :median
       # rubocop:enable Metrics/AbcSize
 
-      # rubocop:disable Style/UnneededSort
+      # rubocop:disable Style/RedundantSort
       def min
         return if @collection.empty?
 
@@ -76,7 +76,7 @@ module Lite
       end
 
       memoize :min
-      # rubocop:enable Style/UnneededSort
+      # rubocop:enable Style/RedundantSort
 
       def mode
         return if @collection.empty?
