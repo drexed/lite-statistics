@@ -192,7 +192,7 @@ module Lite
       def proportions
         return if @collection.empty?
 
-        frequencies.each_with_object({}) { |(key, val), hash| hash[key] = val / size.to_f }
+        frequencies.transform_values { |val| val / size.to_f }
       end
 
       memoize :proportions
