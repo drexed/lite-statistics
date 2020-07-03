@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.5] - 2019-08-24
+### Added
+- Added ruby 2.7 support
 ### Changed
-- Imporved how configuration works
+- Improved how configuration works
 
 ## [1.0.4] - 2019-08-17
 ### Changed
