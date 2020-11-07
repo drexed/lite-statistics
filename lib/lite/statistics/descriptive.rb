@@ -326,9 +326,9 @@ module Lite
           min: min,
           mode: mode,
           proportions: proportions,
-          quartile_1: value_from_percentile(25),
-          quartile_2: value_from_percentile(50),
-          quartile_3: value_from_percentile(75),
+          quartile1: value_from_percentile(25),
+          quartile2: value_from_percentile(50),
+          quartile3: value_from_percentile(75),
           range: range,
           size: size,
           sum: sum

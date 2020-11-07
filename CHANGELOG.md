@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-06-06
+### Changed
+- Removed underscore of quartile numbers
+
 ## [1.0.5] - 2019-08-24
 ### Added
 - Added ruby 2.7 support

@@ -3,8 +3,10 @@
 if Lite::Statistics.configuration.monkey_patches
   module Enumerable
 
+    EXCLUDED_DESCRIPTIVE_CALCULATIONS ||= %i[max min sum].freeze
+
     Lite::Statistics::Descriptive::CALCULATIONS.each do |name|
-      next if %i[max min sum].include?(name)
+      next if EXCLUDED_DESCRIPTIVE_CALCULATIONS.include?(name)
 
       define_method(name) { |*args| Lite::Statistics::Descriptive.send(name, self, *args) }
     end
