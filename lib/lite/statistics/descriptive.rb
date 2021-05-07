@@ -6,7 +6,7 @@ module Lite
 
       extend Lite::Memoize::Alias
 
-      CALCULATIONS ||= %i[
+      CALCULATIONS = %i[
         frequencies max mean median midrange min mode proportions percentile_from_value
         population_coefficient_of_variation population_kurtosis population_size population_skewness
         population_standard_deviation population_standard_error population_summary

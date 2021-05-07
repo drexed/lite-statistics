@@ -3,7 +3,7 @@
 if Lite::Statistics.configuration.monkey_patches
   module Enumerable
 
-    EXCLUDED_DESCRIPTIVE_CALCULATIONS ||= %i[max min sum].freeze
+    EXCLUDED_DESCRIPTIVE_CALCULATIONS = %i[max min sum].freeze
 
     Lite::Statistics::Descriptive::CALCULATIONS.each do |name|
       next if EXCLUDED_DESCRIPTIVE_CALCULATIONS.include?(name)
