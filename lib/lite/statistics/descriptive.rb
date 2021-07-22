@@ -7,12 +7,36 @@ module Lite
       extend Lite::Memoize::Alias
 
       CALCULATIONS = %i[
-        frequencies max mean median midrange min mode proportions percentile_from_value
-        population_coefficient_of_variation population_kurtosis population_size population_skewness
-        population_standard_deviation population_standard_error population_summary
-        population_variance population_zscores range sample_coefficient_of_variation sample_kurtosis
-        sample_size sample_skewness sample_standard_deviation sample_standard_error sample_summary
-        sample_variance sample_zscores sum value_from_percentile
+        frequencies
+        max
+        mean
+        median
+        midrange
+        min
+        mode
+        proportions
+        percentile_from_value
+        population_coefficient_of_variation
+        population_kurtosis
+        population_size
+        population_skewness
+        population_standard_deviation
+        population_standard_error
+        population_summary
+        population_variance
+        population_zscores
+        range
+        sample_coefficient_of_variation
+        sample_kurtosis
+        sample_size
+        sample_skewness
+        sample_standard_deviation
+        sample_standard_error
+        sample_summary
+        sample_variance
+        sample_zscores
+        sum
+        value_from_percentile
       ].freeze
 
       def initialize(collection)

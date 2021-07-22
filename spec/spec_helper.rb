@@ -2,10 +2,10 @@
 
 require 'bundler/setup'
 require 'rails/generators'
-require 'lite/statistics'
 require 'generator_spec'
 
-Lite::Statistics.reset_configuration!
+require 'lite/statistics'
+require 'lite/statistics/monkey_patches'
 
 spec_path = Pathname.new(File.expand_path('../spec', File.dirname(__FILE__)))
 

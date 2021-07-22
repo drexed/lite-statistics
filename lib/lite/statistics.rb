@@ -2,8 +2,7 @@
 
 require 'generators/lite/statistics/install_generator' if defined?(Rails::Generators)
 
-require 'lite/memoize'
+require 'lite/memoize' unless defined?(Lite::Memoize)
 
-%w[version configuration descriptive enumerable].each do |filename|
-  require "lite/statistics/#{filename}"
-end
+require 'lite/statistics/version'
+require 'lite/statistics/descriptive'

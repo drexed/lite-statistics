@@ -30,13 +30,19 @@ Or install it yourself as:
 
 ## Configurations
 
+Any and all monkey patches must be explicitly included anywhere you want to use it.
+
+To globally use the monkey patches, just create an initializer requiring them.
+
 `rails g lite:statistics:install` will generate the following file:
 `../config/initalizers/lite_statistics.rb`
 
+They can be disabled by commenting any of them out.
+
 ```ruby
-Lite::Statistics.configure do |config|
-  config.monkey_patches = true
-end
+# frozen_string_literal: true
+
+require 'lite/statistics/monkey_patches'
 ```
 
 ## Descriptive
